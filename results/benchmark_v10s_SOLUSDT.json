@@ -1,0 +1,113 @@
+{
+  "args": {
+    "symbol": "SOLUSDT",
+    "dates_from": "2026-04-01",
+    "n_days": 40,
+    "per_day": 60,
+    "seed": 0,
+    "checkpoint": "checkpoints/market_v10s_softmix/recurrent_dotpfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v10s_softmix_ablated/recurrent_dotpfn_best.pt",
+    "count_handle": false,
+    "recursive": false,
+    "out": "output/benchmark_v10s_SOLUSDT.json"
+  },
+  "classes": [
+    {
+      "dur": "2-3",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.11254174631592212,
+      "measured": 0.1277888261154294,
+      "response": 0.14019435085123405
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.37215629563832253,
+      "measured": 0.23791802637279033,
+      "response": 0.4798572444834281
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.3001350110331829,
+      "measured": 0.5474021391943097,
+      "response": 1.465400908421725
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.10354625495254721,
+      "measured": 0.1603557270206511,
+      "response": 0.19047104266821407
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.3641794325184557,
+      "measured": 0.4156542435660958,
+      "response": 0.6819929403951391
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.30486227723081,
+      "measured": 0.9239667773805559,
+      "response": 2.0060329389944673
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.11049922156842243,
+      "measured": 0.23504175076261163,
+      "response": 0.2867171944411348
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.33600399214552396,
+      "measured": 0.5197019995376467,
+      "response": 0.8522960315969976
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 0.976687604566801,
+      "measured": 1.1454617306776345,
+      "response": 2.2298388132851685
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 0,
+      "n": 106,
+      "c_mean": 0.12861198584378417,
+      "measured": 0.34046822164277984,
+      "response": 0.4203842727836432
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 1,
+      "n": 106,
+      "c_mean": 0.3623236024645445,
+      "measured": 0.7395562631482223,
+      "response": 1.3115778247439214
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 2,
+      "n": 106,
+      "c_mean": 0.8276923334054321,
+      "measured": 1.355002623051405,
+      "response": 2.600131674726243
+    }
+  ],
+  "curve_correlation": 0.979447831363711
+}

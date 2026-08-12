@@ -1,0 +1,113 @@
+{
+  "args": {
+    "symbol": "ETHUSDT",
+    "dates_from": "2026-04-01",
+    "n_days": 40,
+    "per_day": 60,
+    "seed": 0,
+    "checkpoint": "checkpoints/market_v10s_softmix/recurrent_dotpfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v10s_softmix_ablated/recurrent_dotpfn_best.pt",
+    "count_handle": false,
+    "recursive": false,
+    "out": "output/benchmark_v10s_ETHUSDT.json"
+  },
+  "classes": [
+    {
+      "dur": "2-3",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.09148281868533809,
+      "measured": 0.08958681158721447,
+      "response": 0.07013768687727862
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.33424268452915695,
+      "measured": 0.2345303022954613,
+      "response": 0.4334455507830717
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.3616858265413214,
+      "measured": 0.5513233292941004,
+      "response": 1.5559916988603073
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.10368976846500778,
+      "measured": 0.11183499804232269,
+      "response": 0.16775806451099926
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.3305257195256167,
+      "measured": 0.427978282305412,
+      "response": 0.6138254352286459
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.2275333899373342,
+      "measured": 0.9034827825799584,
+      "response": 2.086455701296218
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.08536065615102982,
+      "measured": 0.13693345739739016,
+      "response": 0.25000471863429996
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.2825513069559635,
+      "measured": 0.4343864054046571,
+      "response": 0.7285711250593886
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.0250310251970765,
+      "measured": 1.191732921404764,
+      "response": 2.312200849895598
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 0,
+      "n": 106,
+      "c_mean": 0.10202323359920414,
+      "measured": 0.332728154605852,
+      "response": 0.4137936034042142
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 1,
+      "n": 106,
+      "c_mean": 0.32062703828783146,
+      "measured": 0.6080321263311044,
+      "response": 1.2308562688204407
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 2,
+      "n": 106,
+      "c_mean": 0.8590172052965638,
+      "measured": 1.4336638033196751,
+      "response": 2.7292959687106735
+    }
+  ],
+  "curve_correlation": 0.9753059553431959
+}

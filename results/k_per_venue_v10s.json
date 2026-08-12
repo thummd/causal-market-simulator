@@ -1,0 +1,20 @@
+{
+  "estimator": "episode-count-weighted sum(measured*n)/sum(response*n) over the 12 benchmark cells",
+  "venues": {
+    "BTCUSDT": {
+      "k": 0.4926386795325017,
+      "curve_correlation": 0.9645001533523955,
+      "source": "output/benchmark_v10s_softmix.json"
+    },
+    "ETHUSDT": {
+      "k": 0.506827924907761,
+      "curve_correlation": 0.9753059553431959,
+      "source": "output/benchmark_v10s_ETHUSDT.json"
+    },
+    "SOLUSDT": {
+      "k": 0.5272325851960561,
+      "curve_correlation": 0.979447831363711,
+      "source": "output/benchmark_v10s_SOLUSDT.json"
+    }
+  }
+}

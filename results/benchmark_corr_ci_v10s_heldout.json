@@ -1,0 +1,10 @@
+{
+  "corr": 0.9689578995735104,
+  "ci": [
+    0.9342788915838334,
+    0.9841926788277947
+  ],
+  "n_episodes": 2153,
+  "B": 2000,
+  "source": "output/benchmark_v10s_heldout_jun.json"
+}

@@ -1,0 +1,112 @@
+{
+  "args": {
+    "symbol": "BTCUSDT",
+    "dates_from": "2026-04-01",
+    "n_days": 40,
+    "per_day": 60,
+    "seed": 0,
+    "checkpoint": "checkpoints/market_v10s_softmix/recurrent_dotpfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v10s_softmix_ablated/recurrent_dotpfn_best.pt",
+    "recursive": false,
+    "out": "output/benchmark_v10s_softmix.json"
+  },
+  "classes": [
+    {
+      "dur": "2-3",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.11108028974048903,
+      "measured": 0.06845898629166186,
+      "response": 0.10949396850541233
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.3492819855962307,
+      "measured": 0.22607185318949632,
+      "response": 0.42028095572139135
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.1062779634712183,
+      "measured": 0.5122987058060243,
+      "response": 1.313642684663646
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.08860961379105863,
+      "measured": 0.04015384762082249,
+      "response": 0.17252646015957
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.3104689972114313,
+      "measured": 0.3620072124374565,
+      "response": 0.5820226087165065
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 1.1981847589179264,
+      "measured": 0.7781669354235055,
+      "response": 1.9062771052648895
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 0,
+      "n": 200,
+      "c_mean": 0.11137741069591207,
+      "measured": 0.07708881234866567,
+      "response": 0.30110476491157895
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 1,
+      "n": 200,
+      "c_mean": 0.32643266863740694,
+      "measured": 0.5754322310443968,
+      "response": 0.8614744918694487
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 2,
+      "n": 200,
+      "c_mean": 0.9085106888178399,
+      "measured": 1.0063182253111154,
+      "response": 2.125467488283757
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 0,
+      "n": 120,
+      "c_mean": 0.09911325370475971,
+      "measured": 0.3268299425641696,
+      "response": 0.3394250892131822
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 1,
+      "n": 120,
+      "c_mean": 0.3061238063961672,
+      "measured": 0.6962501893440882,
+      "response": 1.1435491095568675
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 2,
+      "n": 120,
+      "c_mean": 0.7513109227364965,
+      "measured": 1.2552084148551026,
+      "response": 2.4894646630156787
+    }
+  ],
+  "curve_correlation": 0.9645001533523955
+}

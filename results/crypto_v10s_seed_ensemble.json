@@ -1,0 +1,61 @@
+{
+  "method": "per-episode mean of the three seeds' predictions (s42/s43/s44), bias = mean ensembled causal signed error; delta = mean paired (ensembled causal - ensembled ablated); B=10000 episode bootstrap, seed 0",
+  "sources": {
+    "BTCUSDT": [
+      "output/crypto_BTCUSDT_v10s.json",
+      "output/crypto_BTCUSDT_v10s_s43.json",
+      "output/crypto_BTCUSDT_v10s_s44.json"
+    ],
+    "ETHUSDT": [
+      "output/crypto_ETHUSDT_v10s.json",
+      "output/crypto_ETHUSDT_v10s_s43.json",
+      "output/crypto_ETHUSDT_v10s_s44.json"
+    ],
+    "SOLUSDT": [
+      "output/crypto_SOLUSDT_v10s.json",
+      "output/crypto_SOLUSDT_v10s_s43.json",
+      "output/crypto_SOLUSDT_v10s_s44.json"
+    ]
+  },
+  "symbols": {
+    "BTCUSDT": {
+      "n": 763,
+      "ens_bias": [
+        0.01591385997656461,
+        -0.17285424632553498,
+        0.19929595457423713
+      ],
+      "ens_delta": [
+        2.25623610396901,
+        2.1725546180660955,
+        2.3424237231081673
+      ]
+    },
+    "ETHUSDT": {
+      "n": 758,
+      "ens_bias": [
+        -0.217321694364918,
+        -0.4323699066166556,
+        -0.003457555916377057
+      ],
+      "ens_delta": [
+        2.3413155975599866,
+        2.2565359809794963,
+        2.426969247778325
+      ]
+    },
+    "SOLUSDT": {
+      "n": 757,
+      "ens_bias": [
+        0.1301082534036982,
+        -0.08304622908631058,
+        0.3373201859563093
+      ],
+      "ens_delta": [
+        2.099242053049967,
+        2.0260676317101467,
+        2.1730802535833718
+      ]
+    }
+  }
+}

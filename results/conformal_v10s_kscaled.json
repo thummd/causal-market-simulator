@@ -1,0 +1,41 @@
+{
+  "args": {
+    "n_cal": 300,
+    "n_eval": 300,
+    "k_scale": 0.049,
+    "seed0": 0,
+    "intervention_kind": "soft",
+    "checkpoint": "checkpoints/market_v10s_softmix/recurrent_dotpfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v10s_softmix_ablated/recurrent_dotpfn_best.pt",
+    "device": "cpu",
+    "out": "output/conformal_v10s_kscaled.json"
+  },
+  "models": {
+    "causal": {
+      "correction": 1.3819403648376465,
+      "raw": {
+        "n": 300,
+        "coverage80": 0.7099999785423279,
+        "median_width80": 10.645713806152344
+      },
+      "conformal": {
+        "n": 300,
+        "coverage80": 0.7833333611488342,
+        "median_width80": 13.40959358215332
+      }
+    },
+    "ablated": {
+      "correction": 1.2380588054656982,
+      "raw": {
+        "n": 300,
+        "coverage80": 0.7366666793823242,
+        "median_width80": 10.504098892211914
+      },
+      "conformal": {
+        "n": 300,
+        "coverage80": 0.79666668176651,
+        "median_width80": 12.980216979980469
+      }
+    }
+  }
+}

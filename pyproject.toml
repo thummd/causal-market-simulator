@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dotime-market"
+version = "0.0.1"
+description = "Causal Market Simulator: a continuous-time causal PFN for market impact, built on dotime (ICAIF '26)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Anonymous" }]
+dependencies = [
+    "dotime[models,baselines]>=0.1.1",   # live on PyPI (0.1.1)
+    "torch>=2.0",
+    "numpy",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+train = ["wandb"]
+# abides-core/-markets are not on PyPI; both declare no install_requires and
+# import cleanly on modern Python (verified 2026-07-08). The pomegranate-using
+# order-size model is avoided by our config (order_size_model=None).
+abides = [
+    "abides-core @ git+https://github.com/jpmorganchase/abides-jpmc-public.git#subdirectory=abides-core",
+    "abides-markets @ git+https://github.com/jpmorganchase/abides-jpmc-public.git#subdirectory=abides-markets",
+    "coloredlogs",     # imported by abides_core.abides (undeclared upstream)
+]
+crypto = ["pyarrow"]   # parquet cache for the Binance aggTrades loader
+dev = ["pytest", "ruff", "matplotlib"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dotime_market"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "scripts", "tests"]

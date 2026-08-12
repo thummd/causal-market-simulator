@@ -1,0 +1,16 @@
+# Market prior hyperparameters (Phase 1+) — consumed by dotime_market.prior.market_scm.
+# Placeholder values; the load-bearing knobs are coupling_gamma and core_share
+# (they control the E[Y|do(A)] vs E[Y|A] gap the whole PoC rests on).
+prior:
+  coupling_gamma_range: [0.0, 2.0]   # informational coupling γ, sampled per episode
+  core_share_range: [0.3, 0.9]       # core (exogenous, hidden) fraction of order flow
+  h0_consistent: false               # opt-in single-statistic (H0) parameterization
+  # Phase 3 realism (each must pass its reduction test: off == stock dotime)
+  jump_rate_range: [0.0, 0.5]
+  p_jump_active: 0.3
+  n_factors_max: 4                   # K=0 recovers the stock random-DAG sampler
+  factor_load_prob: 0.4
+  p_direct_edge: 0.05
+  hawkes_mu0: 0.05
+  hawkes_alpha: 0.3
+  hawkes_beta: 1.0

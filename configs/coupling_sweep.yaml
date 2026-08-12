@@ -1,0 +1,9 @@
+# Bias-vs-γ sweep (the headline Figure 2) — consumed by scripts/01_bias_vs_gamma.py.
+sweep:
+  gamma_grid: [0.0, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0]
+  core_share: 0.7
+  n_episodes_per_gamma: 2000
+  seed: 0
+  # Registry names consumed by scripts/01b_methods_vs_gamma.py.
+  methods: ["Mean", "AR1", "AlmgrenChriss", "OWPropagator", "param-oracle", "market-dotpfn", "ablated-dotpfn"]
+  bootstrap_resamples: 10000
