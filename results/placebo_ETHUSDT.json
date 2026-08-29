@@ -1,0 +1,51 @@
+{
+  "args": {
+    "symbol": "ETHUSDT",
+    "dates_from": "2026-04-01",
+    "n_days": 91,
+    "bar_seconds": 60,
+    "cache_dir": "data/raw/binance",
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "seed": 0,
+    "out": "output/placebo_ETHUSDT.json"
+  },
+  "sets": {
+    "real": {
+      "n": 758,
+      "bias_causal": -1.1477545973380086,
+      "bias_causal_ci": [
+        -1.3966269832447546,
+        -0.9066634137684991
+      ],
+      "bias_ablated": -2.59422538436072,
+      "bias_ablated_ci": [
+        -2.8338354787983566,
+        -2.363103426341889
+      ],
+      "delta": 1.4464707870227114,
+      "delta_ci": [
+        1.3151699789885256,
+        1.5777795866830426
+      ]
+    },
+    "placebo": {
+      "n": 663,
+      "bias_causal": 1.3406779569774574,
+      "bias_causal_ci": [
+        1.1578316776424318,
+        1.5259693356876318
+      ],
+      "bias_ablated": -0.09613471168625769,
+      "bias_ablated_ci": [
+        -0.21478007722735196,
+        0.021650497369021512
+      ],
+      "delta": 1.436812668663715,
+      "delta_ci": [
+        1.295900436560553,
+        1.5806324924519326
+      ]
+    }
+  }
+}

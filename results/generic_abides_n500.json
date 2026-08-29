@@ -1,0 +1,51 @@
+{
+  "args": {
+    "tiers": [
+      "abides"
+    ],
+    "gammas": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "n_episodes": 500,
+    "generic_checkpoints": [
+      "checkpoints/hf_generic/s9btm_all_causal.pt",
+      "checkpoints/hf_generic/s9ho_all_causal.pt"
+    ],
+    "market_checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "device": "cpu",
+    "out": "output/generic_abides_n500.json"
+  },
+  "tiers": {
+    "abides_heldout": {
+      "generic-s9btm_all_causal": {
+        "bias": 0.24756859644502402,
+        "bias_ci": [
+          -0.10225092885065824,
+          0.5927093015898017
+        ],
+        "rmse": 5.5504008174021635,
+        "n": 1000
+      },
+      "generic-s9ho_all_causal": {
+        "bias": 0.29700305058807136,
+        "bias_ci": [
+          -0.05244715247824787,
+          0.641191118787229
+        ],
+        "rmse": 5.547473609007112,
+        "n": 1000
+      },
+      "market-dotpfn": {
+        "bias": 0.08272917860746384,
+        "bias_ci": [
+          -0.26799330270886423,
+          0.42380481811836335
+        ],
+        "rmse": 5.526467091521627,
+        "n": 1000
+      }
+    }
+  }
+}

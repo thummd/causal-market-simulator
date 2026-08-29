@@ -1,0 +1,51 @@
+{
+  "args": {
+    "symbol": "SOLUSDT",
+    "dates_from": "2026-04-01",
+    "n_days": 91,
+    "bar_seconds": 60,
+    "cache_dir": "data/raw/binance",
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "seed": 0,
+    "out": "output/placebo_SOLUSDT.json"
+  },
+  "sets": {
+    "real": {
+      "n": 757,
+      "bias_causal": -0.8282538126502678,
+      "bias_causal_ci": [
+        -1.042537399915864,
+        -0.6169658390201058
+      ],
+      "bias_ablated": -1.9597567012109098,
+      "bias_ablated_ci": [
+        -2.1580195686317944,
+        -1.762849047208587
+      ],
+      "delta": 1.131502888560642,
+      "delta_ci": [
+        1.0186165672802052,
+        1.246210514459989
+      ]
+    },
+    "placebo": {
+      "n": 654,
+      "bias_causal": 1.2347531633014401,
+      "bias_causal_ci": [
+        1.0718472037531488,
+        1.3982519602691057
+      ],
+      "bias_ablated": 0.09642755729537913,
+      "bias_ablated_ci": [
+        -0.016682274712241447,
+        0.2050382642728787
+      ],
+      "delta": 1.138325606006061,
+      "delta_ci": [
+        1.0193623468853816,
+        1.2580507714224005
+      ]
+    }
+  }
+}

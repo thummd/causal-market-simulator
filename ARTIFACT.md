@@ -54,6 +54,35 @@ ranges, B=10^4 episode bootstrap).
   (`methods_vs_gamma_v4_full.json`; source of the paper's
   gamma=2 bias +0.16 [0.05, 0.28]).
 
+- Transformer-tier result JSONs backing Table 1, §4.1–4.3 and Table 2:
+  the held-out ABIDES seed-replay evaluation (`abides_heldout_v4_full.json`,
+  seeds 1000–1999, per-episode dump included; hard-clamp encoding control
+  `abides_hard_v4pair_n300.json`), the three burst-tier runs
+  (`crypto_{BTC,ETH,SOL}USDT_q2_full.json`), the placebo controls
+  (`placebo_test.json` = BTC, `placebo_{ETH,SOL}USDT.json`), the sign-shuffle
+  null (`sign_shuffle.json`), the square-root-law prefactor sweep
+  (`sqrt_sensitivity.json`), the generic-prior controls
+  (`generic_baseline_full.json`, `generic_abides_n500.json`), the
+  calibration table (`calibration_n500agents.json`) and its split-conformal
+  repair (`conformal_abides_n500.json`), the transformer's metaorder
+  benchmark (`benchmark_prototype.json`, `benchmark_corr_ci.json`), and the
+  recipe-ablation chain on the synthetic grid (`methods_vs_gamma_v1_ci.json`
+  unskewed → `_v2` 4x longer → `_v3` gamma-skewed → `_v4_full` re-run;
+  soft-mix seeds `methods_vs_gamma_v4s{,_s43,_s44}.json` with their BTC
+  transfer runs `crypto_BTCUSDT_v4s.json`, `crypto_BTC_v4s_s{43,44}.json`).
+
+**Every number the paper prints is asserted against these files by
+`results/check_paper_numbers.py`** (standard library only, seconds, no GPU):
+
+```bash
+python results/check_paper_numbers.py
+```
+
+Each claim names its paper location, the JSON it comes from, the stored
+value and the printed one; a claim passes when the stored value rounds to
+the printed one. Claims with no stored artifact are listed as UNCHECKED
+rather than omitted.
+
 Checkpoints for the recurrent state-space pairs (1.94M parameters,
 about 7.5 MB each) are included under `checkpoints/`: the hard-trained pair
 (`market_v10_rnn{,_ablated}`) and the soft-mix pairs for all three

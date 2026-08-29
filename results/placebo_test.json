@@ -1,0 +1,51 @@
+{
+  "args": {
+    "symbol": "BTCUSDT",
+    "dates_from": "2026-04-01",
+    "n_days": 91,
+    "bar_seconds": 60,
+    "cache_dir": "data/raw/binance",
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "seed": 0,
+    "out": "output/placebo_test.json"
+  },
+  "sets": {
+    "real": {
+      "n": 763,
+      "bias_causal": -0.9482778033158018,
+      "bias_causal_ci": [
+        -1.1650284132038318,
+        -0.7341862759440906
+      ],
+      "bias_ablated": -2.289048649362736,
+      "bias_ablated_ci": [
+        -2.49042768362587,
+        -2.089230845396106
+      ],
+      "delta": 1.3407708460469345,
+      "delta_ci": [
+        1.2135930816206117,
+        1.4695811510170433
+      ]
+    },
+    "placebo": {
+      "n": 655,
+      "bias_causal": 1.3488191235796299,
+      "bias_causal_ci": [
+        1.167887831336911,
+        1.5305807434002519
+      ],
+      "bias_ablated": -0.026485074908501036,
+      "bias_ablated_ci": [
+        -0.148305572928867,
+        0.09724444186006126
+      ],
+      "delta": 1.375304198488131,
+      "delta_ci": [
+        1.2349956416030805,
+        1.514516523905922
+      ]
+    }
+  }
+}

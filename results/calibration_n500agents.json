@@ -1,0 +1,109 @@
+{
+  "args": {
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "n_synthetic": 300,
+    "n_abides": 300,
+    "crypto_days": 30,
+    "device": "cpu",
+    "out": "output/calibration_n500agents.json"
+  },
+  "tiers": {
+    "synthetic g=0": {
+      "causal": {
+        "n": 300,
+        "coverage80": 0.7666666507720947,
+        "coverage50": 0.49000000953674316,
+        "median_width80": 1.6764453649520874,
+        "median_width50": 0.8684659600257874
+      },
+      "ablated": {
+        "n": 300,
+        "coverage80": 0.7566666603088379,
+        "coverage50": 0.476666659116745,
+        "median_width80": 2.443448066711426,
+        "median_width50": 1.1961532831192017
+      }
+    },
+    "synthetic g=1": {
+      "causal": {
+        "n": 300,
+        "coverage80": 0.8233333230018616,
+        "coverage50": 0.550000011920929,
+        "median_width80": 2.3208165168762207,
+        "median_width50": 1.1986653804779053
+      },
+      "ablated": {
+        "n": 300,
+        "coverage80": 0.800000011920929,
+        "coverage50": 0.5400000214576721,
+        "median_width80": 3.466146945953369,
+        "median_width50": 1.6778781414031982
+      }
+    },
+    "synthetic g=2": {
+      "causal": {
+        "n": 300,
+        "coverage80": 0.7900000214576721,
+        "coverage50": 0.5133333206176758,
+        "median_width80": 3.1690516471862793,
+        "median_width50": 1.6548508405685425
+      },
+      "ablated": {
+        "n": 300,
+        "coverage80": 0.8500000238418579,
+        "coverage50": 0.5799999833106995,
+        "median_width80": 4.748653411865234,
+        "median_width50": 2.319883346557617
+      }
+    },
+    "ABIDES": {
+      "causal": {
+        "n": 300,
+        "coverage80": 0.3166666626930237,
+        "coverage50": 0.17000000178813934,
+        "median_width80": 3.2024085521698,
+        "median_width50": 1.6481443643569946
+      },
+      "ablated": {
+        "n": 300,
+        "coverage80": 0.38999998569488525,
+        "coverage50": 0.23000000417232513,
+        "median_width80": 3.7277398109436035,
+        "median_width50": 1.8335928916931152
+      }
+    },
+    "BTC bursts": {
+      "causal": {
+        "n": 252,
+        "coverage80": 0.4682539701461792,
+        "coverage50": 0.2936508059501648,
+        "median_width80": 3.061553955078125,
+        "median_width50": 1.6064751148223877
+      },
+      "ablated": {
+        "n": 252,
+        "coverage80": 0.3452380895614624,
+        "coverage50": 0.170634925365448,
+        "median_width80": 3.4638962745666504,
+        "median_width50": 1.6983399391174316
+      }
+    },
+    "ETH bursts": {
+      "causal": {
+        "n": 245,
+        "coverage80": 0.5102040767669678,
+        "coverage50": 0.2857142984867096,
+        "median_width80": 3.0461549758911133,
+        "median_width50": 1.6179523468017578
+      },
+      "ablated": {
+        "n": 245,
+        "coverage80": 0.3224489688873291,
+        "coverage50": 0.13469387590885162,
+        "median_width80": 3.435758113861084,
+        "median_width50": 1.6858770847320557
+      }
+    }
+  }
+}

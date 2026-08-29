@@ -1,0 +1,40 @@
+{
+  "args": {
+    "n_cal": 500,
+    "n_eval": 500,
+    "seed0": 0,
+    "intervention_kind": "soft",
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "device": "cpu",
+    "out": "output/conformal_abides_n500.json"
+  },
+  "models": {
+    "causal": {
+      "correction": 4.959246397018433,
+      "raw": {
+        "n": 500,
+        "coverage80": 0.3059999942779541,
+        "median_width80": 3.2226622104644775
+      },
+      "conformal": {
+        "n": 500,
+        "coverage80": 0.8199999928474426,
+        "median_width80": 13.141155242919922
+      }
+    },
+    "ablated": {
+      "correction": 4.574484705924988,
+      "raw": {
+        "n": 500,
+        "coverage80": 0.40400001406669617,
+        "median_width80": 3.6512014865875244
+      },
+      "conformal": {
+        "n": 500,
+        "coverage80": 0.8059999942779541,
+        "median_width80": 12.8001708984375
+      }
+    }
+  }
+}

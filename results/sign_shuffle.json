@@ -1,0 +1,40 @@
+{
+  "args": {
+    "symbol": "BTCUSDT",
+    "seed": 0,
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "out": "output/sign_shuffle.json"
+  },
+  "n": 763,
+  "impact_true_signs": [
+    1.050050131881397,
+    0.8957533118297952,
+    1.2068885163271919
+  ],
+  "impact_shuffled_signs": [
+    -0.13210998715522795,
+    -0.30580587742556015,
+    0.039730815264471975
+  ],
+  "causal_bias_true": [
+    -0.84117585772906,
+    -1.0583986939113224,
+    -0.6257489683637887
+  ],
+  "causal_bias_shuffled": [
+    1.4887011403560901,
+    1.208545786783305,
+    1.7785746130963382
+  ],
+  "ablated_bias_true": [
+    -2.264850398481959,
+    -2.4638452152918786,
+    -2.0701390841436837
+  ],
+  "ablated_bias_shuffled": [
+    0.1234402759504159,
+    -0.1284069722586526,
+    0.3752150073180844
+  ]
+}
