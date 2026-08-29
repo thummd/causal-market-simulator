@@ -94,7 +94,7 @@ A = "abides_heldout_v4_full.json"
 C("S4.1 ABIDES", "held-out seed range starts at 1000", lambda: J(A)["args"]["seed0"], 1000, 0)
 C("S4.1 ABIDES", "measured seed-replay impact", lambda: J(A)["ground_truth"]["mean"], 0.28)
 ci("S4.1 ABIDES", "measured impact", lambda: J(A)["ground_truth"]["ci"], 0.05, 0.50)
-C("S4.1 ABIDES", "causal response +0.378", lambda: J(A)["methods"]["market-dotpfn"]["delta_vs_ablated"], 0.378, 3)
+C("S4.1 ABIDES", "causal response +0.379", lambda: J(A)["methods"]["market-dotpfn"]["delta_vs_ablated"], 0.379, 3)
 ci("S4.1 ABIDES", "causal response", lambda: J(A)["methods"]["market-dotpfn"]["delta_ci"], 0.342, 0.416, 3)
 C("S4.1 ABIDES", "causal bias +0.08", lambda: J(A)["methods"]["market-dotpfn"]["bias"], 0.08)
 ci("S4.1 ABIDES", "causal bias", lambda: J(A)["methods"]["market-dotpfn"]["bias_ci"], -0.27, 0.42)
@@ -166,10 +166,10 @@ C("S3 recipe", "soft-trained BTC do-head response, max +0.72", lambda: max(J(f)[
 MG = "magnitude_scaling_v4s_seeds.json"
 SOFT_PAIRS = ["v4s_soft", "v4s_s43", "v4s_s44"]
 C("S3 magnitude", "173 burst episodes", lambda: J(MG)["n_episodes"], 173, 0)
-C("S3 magnitude", "every soft seed rises monotonically over 0.25x-4x (1=true)",
+C("S3 magnitude", "every soft seed rises monotonically from 0.5x to 4x (1=true)",
   lambda: float(all(
-      [J(MG)["pairs"][p]["per_factor"][k]["mean_delta"] for k in ("0.25", "0.5", "1.0", "2.0", "4.0")]
-      == sorted(J(MG)["pairs"][p]["per_factor"][k]["mean_delta"] for k in ("0.25", "0.5", "1.0", "2.0", "4.0"))
+      [J(MG)["pairs"][p]["per_factor"][k]["mean_delta"] for k in ("0.5", "1.0", "2.0", "4.0")]
+      == sorted(J(MG)["pairs"][p]["per_factor"][k]["mean_delta"] for k in ("0.5", "1.0", "2.0", "4.0"))
       for p in SOFT_PAIRS)), 1, 0)
 C("S3 magnitude", "significantly nonzero by 2x-4x on every seed (1=true)",
   lambda: float(all(J(MG)["pairs"][p]["per_factor"][k]["ci"][0] > 0 for p in SOFT_PAIRS for k in ("2.0", "4.0"))), 1, 0)
@@ -332,13 +332,7 @@ UNCHECKED = [
 
 # Claims kept at the paper's literal wording although the stored value
 # disagrees at print resolution. They FAIL above by design; this block says why.
-KNOWN_DISCREPANCIES = [
-    ("S4.1 ABIDES", "causal response +0.378",
-     "stored 0.37852 rounds to +0.379 (the CI [0.342, 0.416] and the Table 1 entry +0.38 are unaffected)"),
-    ("S3 magnitude", "every soft seed rises monotonically over 0.25x-4x",
-     "seed 43's first step dips 0.0024 -> 0.0016 (both CIs span zero); monotone from 0.5x on every seed, "
-     "and significantly nonzero by 2x-4x on every seed, as the same sentence also states"),
-]
+KNOWN_DISCREPANCIES: list[tuple[str, str, str]] = []  # none after the 2026-08-12 paper fixes
 
 
 def main() -> int:
