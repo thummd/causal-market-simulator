@@ -42,6 +42,9 @@ TEXT, MUTED, GRID = "#0b0b0b", "#52514e", "#e4e3df"
 
 plt.rcParams.update({
     "figure.dpi": 150,
+    # ACM production rejects Type 3 fonts; 42 embeds TrueType outlines instead.
+    "pdf.fonttype": 42,
+    "ps.fonttype": 42,
     "font.size": 8.5,
     "axes.edgecolor": MUTED,
     "axes.labelcolor": TEXT,
@@ -68,21 +71,21 @@ def figure_bias_vs_gamma(data: dict, out: Path) -> None:
     ax.plot(g, [r["naive_ana"]["mean"] for r in rows], "--", color=C["naive"],
             lw=1.4, alpha=0.75)
     ax.plot(g, [r["naive_emp"]["mean"] for r in rows], "o-", color=C["naive"],
-            lw=1.8, ms=4.5, label="naive (observational OLS)")
+            lw=1.8, ms=4.5, label="Naive (observational OLS)")
     ax.plot(g, [r["do_ana"]["mean"] for r in rows], "--", color=C["do"],
             lw=1.4, alpha=0.75)
     ax.plot(g, [r["do_emp"]["mean"] for r in rows], "s-", color=C["do"],
-            lw=1.8, ms=4.5, label="interventional (do)")
+            lw=1.8, ms=4.5, label="Interventional (do)")
 
     naive_end = rows[-1]["naive_emp"]["mean"]
     do_end = rows[-1]["do_emp"]["mean"]
     ax.annotate("", xy=(g[-1], naive_end - 0.02), xytext=(g[-1], do_end + 0.02),
                 arrowprops=dict(arrowstyle="<->", color=MUTED, lw=1.0))
-    ax.annotate("confounding\nbias", xy=(g[-1] - 0.06, (naive_end + do_end) / 2),
+    ax.annotate("Confounding\nbias", xy=(g[-1] - 0.06, (naive_end + do_end) / 2),
                 ha="right", va="center", fontsize=8, color=TEXT)
-    ax.annotate("analytic (dashed)", xy=(1.02, 0.74), fontsize=7.5, color=MUTED)
-    ax.set_xlabel(r"informational coupling $\gamma$")
-    ax.set_ylabel(r"estimated impact slope  $\widehat{\beta}$")
+    ax.annotate("Analytic (dashed)", xy=(1.02, 0.74), fontsize=7.5, color=MUTED)
+    ax.set_xlabel(r"Informational coupling $\gamma$")
+    ax.set_ylabel(r"Estimated impact slope  $\widehat{\beta}$")
     ax.legend(loc="upper left", fontsize=8, handlelength=1.6)
     for ext in ("pdf", "png"):
         fig.savefig(out / f"fig1_bias_vs_gamma.{ext}")
@@ -99,20 +102,20 @@ def figure_methods_vs_gamma(data: dict, out: Path) -> None:
                "ablated-dotpfn", "Mean"]
     label = {
         "market-dotpfn": "M-DoT-PFN (causal)",
-        "param-oracle": "param. oracle",
+        "param-oracle": "Param. oracle",
         "AlmgrenChriss": "Almgren-Chriss",
         "OWPropagator": "OW propagator",
         "ablated-dotpfn": "M-DoT-PFN (do-ablated)",
-        "Mean": "pre-window mean",
+        "Mean": "Pre-window mean",
         "ReturnRegression": "return regression",
-        "SquareRootLaw": "square-root law",
+        "SquareRootLaw": "Square-root law",
     }
     markers = {"market-dotpfn": "o", "param-oracle": "s", "AlmgrenChriss": "^",
                "OWPropagator": "v", "SquareRootLaw": "P",
                "ablated-dotpfn": "D", "Mean": "x"}
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.0, 2.6), constrained_layout=True)
-    for ax, metric, ylab in ((ax1, "bias", "signed bias (impact direction)"),
+    for ax, metric, ylab in ((ax1, "bias", "Signed bias (impact direction)"),
                              (ax2, "rmse", "RMSE")):
         _style(ax)
         for m in methods:
@@ -125,7 +128,7 @@ def figure_methods_vs_gamma(data: dict, out: Path) -> None:
                 lo = [r["methods"][m][ci_key][0] for r in rows]
                 hi = [r["methods"][m][ci_key][1] for r in rows]
                 ax.fill_between(g, lo, hi, color=C[m], alpha=0.15, lw=0)
-        ax.set_xlabel(r"informational coupling $\gamma$")
+        ax.set_xlabel(r"Informational coupling $\gamma$")
         ax.set_ylabel(ylab)
     ax1.axhline(0.0, color=MUTED, lw=0.8, ls=":")
 

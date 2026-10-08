@@ -1,0 +1,61 @@
+{
+  "args": {
+    "n_episodes": 500,
+    "seed0": 500,
+    "intervention_kind": "soft",
+    "families": [
+      "recurrent_v10s",
+      "transformer_v4s"
+    ],
+    "out": "output/seed_ensemble_coverage.json"
+  },
+  "n": 500,
+  "families": {
+    "recurrent_v10s": {
+      "single_seed0": {
+        "coverage80": 0.472,
+        "median_width80": 10.382552146911621
+      },
+      "single_seed1": {
+        "coverage80": 0.46,
+        "median_width80": 9.215021133422852
+      },
+      "single_seed2": {
+        "coverage80": 0.544,
+        "median_width80": 8.587285995483398
+      },
+      "envelope": {
+        "coverage80": 0.57,
+        "median_width80": 11.01749324798584
+      },
+      "mixture": {
+        "coverage80": 0.504,
+        "median_width80": 9.632129410424561
+      },
+      "median_seed_sd": 0.5567300319671631
+    },
+    "transformer_v4s": {
+      "single_seed0": {
+        "coverage80": 0.332,
+        "median_width80": 3.2240653038024902
+      },
+      "single_seed1": {
+        "coverage80": 0.328,
+        "median_width80": 3.173367977142334
+      },
+      "single_seed2": {
+        "coverage80": 0.338,
+        "median_width80": 3.203700304031372
+      },
+      "envelope": {
+        "coverage80": 0.378,
+        "median_width80": 3.3196864128112793
+      },
+      "mixture": {
+        "coverage80": 0.346,
+        "median_width80": 3.2158279760126165
+      },
+      "median_seed_sd": 0.05944428592920303
+    }
+  }
+}

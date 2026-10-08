@@ -318,10 +318,44 @@ for cfg, (b, blo, bhi, d, dlo, dhi) in STRESS.items():
     ci(f"Stress {cfg}", "do-head effect", lambda c=cfg: J(ST)["configs"][c]["delta_vs_ablated"]["ci"], dlo, dhi)
 C("Stress", "n=500 episodes per generator", lambda: J(ST)["args"]["n_episodes"], 500, 0)
 
+# ------------------------------------------ Camera-ready additions (2026-10-08)
+# Post-submission evidence quoted in the camera-ready text; files listed in
+# ARTIFACT.md "Camera-ready additions".
+G8 = "methods_vs_gamma_v8_geom.json"
+C("S3 two instantiations", "recipe-matched one-shot bias +0.80 at gamma=2", lambda: gamma_row(G8, 2.0, "market-dotpfn")["bias"], 0.80)
+ci("S3 two instantiations", "recipe-matched one-shot bias", lambda: gamma_row(G8, 2.0, "market-dotpfn")["bias_ci"], 0.67, 0.93)
+G13 = "methods_vs_gamma_v13_perm.json"
+C("S3 two instantiations", "permanent-impact knob alone +1.04 at gamma=2", lambda: gamma_row(G13, 2.0, "market-dotpfn")["bias"], 1.04)
+ci("S3 two instantiations", "permanent-impact knob alone", lambda: gamma_row(G13, 2.0, "market-dotpfn")["bias_ci"], 0.90, 1.18)
+SR = "schedule_robustness_v10mix.json"
+C("S3 recurrent variant", "exponential degradation of the regular-trained recurrent +7.8%",
+  lambda: 100 * (J(SR)["eval_loss"]["exponential"]["recurrent_v10s"] / J(SR)["eval_loss"]["regular"]["recurrent_v10s"] - 1), 7.8, 1)
+C("S3 recurrent variant", "exponential degradation of the mixture-trained replicate +0.7%",
+  lambda: 100 * (J(SR)["eval_loss"]["exponential"]["recurrent_v10mix"] / J(SR)["eval_loss"]["regular"]["recurrent_v10mix"] - 1), 0.7, 1)
+PC = "paired_curve_corr.json"
+C("S3 recurrent variant", "schedule-mixture paired benchmark cost -0.02", lambda: J(PC)["recurrent_v10mix_vs_v10s"]["delta"], -0.02)
+ci("S3 recurrent variant", "schedule-mixture paired benchmark cost", lambda: J(PC)["recurrent_v10mix_vs_v10s"]["delta_ci"], -0.04, -0.01)
+C("S4.2 benchmark", "paired recurrent vs one-shot +0.28", lambda: J(PC)["recurrent_v10s_vs_oneshot_v4"]["delta"], 0.28)
+ci("S4.2 benchmark", "paired recurrent vs one-shot", lambda: J(PC)["recurrent_v10s_vs_oneshot_v4"]["delta_ci"], 0.21, 0.34)
+C("S4.2 benchmark", "paired per-step vs one-shot +0.22", lambda: J(PC)["perstep_v12_vs_oneshot_v4"]["delta"], 0.22)
+ci("S4.2 benchmark", "paired per-step vs one-shot", lambda: J(PC)["perstep_v12_vs_oneshot_v4"]["delta_ci"], 0.16, 0.27)
+C("S4.2 benchmark", "paired recurrent vs per-step +0.06", lambda: J(PC)["recurrent_v10s_vs_perstep_v12"]["delta"], 0.06)
+ci("S4.2 benchmark", "paired recurrent vs per-step", lambda: J(PC)["recurrent_v10s_vs_perstep_v12"]["delta_ci"], 0.03, 0.10)
+C("S4.2 benchmark", "benchmark episodes shared by the paired tests", lambda: J(PC)["recurrent_v10s_vs_oneshot_v4"]["n_episodes"], 2158, 0)
+SE = "seed_ensemble_coverage.json"
+for fam, tag, mix, lo, hi in (("transformer_v4s", "transformer", 0.35, 0.33, 0.34), ("recurrent_v10s", "recurrent", 0.50, 0.46, 0.54)):
+    C("S4.3 calibration", f"seed-mixture coverage {tag} {mix}", lambda f=fam: J(SE)["families"][f]["mixture"]["coverage80"], mix)
+    C("S4.3 calibration", f"single-seed coverage range {tag} low", lambda f=fam: min(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), lo)
+    C("S4.3 calibration", f"single-seed coverage range {tag} high", lambda f=fam: max(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), hi)
+SC = "scale_calibration_cross_eq50.json"
+C("S4.3 scale k", "five labeled auctions: held-out RMSE 0.240", lambda: J(SC)["few_shot"]["sizes"]["5"]["rmse_median"], 0.240, 3)
+C("S4.3 scale k", "last-value predictor RMSE 0.280", lambda: J(SC)["few_shot"]["ar1_rmse"], 0.280, 3)
+
 # Claims the paper makes for which no summary artifact is stored. Listed so
 # the gap is visible; several are post-hoc summaries of the per-episode dumps
 # in abides_heldout_v4_full.json and could be recomputed from them.
 UNCHECKED = [
+    ("S4.3", "few-shot k fit uses 50 random draws per size — the draw count is not stored in scale_calibration_cross_eq50.json"),
     ("S4.2", "calm/stressed volatility split (BTC +1.49 / +1.36; six CIs overlap) — no stored summary"),
     ("S4.1", "ABIDES post-hoc correlations r=0.09 / 0.11, constant-shift RMSE CI [-0.56, 0.14], response SD 0.60, "
              "seed-replay per-episode SD 3.6 — derivable from the per-episode dump, no stored summary"),

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Causal Market Simulator (dotime-market)"
+authors:
+  - family-names: Thumm
+    given-names: Dennis
+    orcid: "https://orcid.org/0009-0001-3666-2415"
+    affiliation: National University of Singapore
+  - family-names: Chen
+    given-names: Ying
+    orcid: "https://orcid.org/0000-0002-2577-7348"
+    affiliation: National University of Singapore
+license: MIT
+repository-code: "https://github.com/thummd/causal-market-simulator"
+preferred-citation:
+  type: conference-paper
+  title: "Market Impact Estimation via Causal Foundation Models"
+  authors:
+    - family-names: Thumm
+      given-names: Dennis
+    - family-names: Chen
+      given-names: Ying
+  collection-title: "7th ACM International Conference on AI in Finance (ICAIF '26)"
+  publisher: ACM
+  year: 2026
+  month: 11

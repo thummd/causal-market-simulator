@@ -1,11 +1,20 @@
 # Causal Market Simulator (`dotime-market`)
 
-ICAIF '26 submission repo: a continuous-time causal PFN for market impact,
-built as an extension of the released `dotime` package (the continuous-time causal PFN construction cited in the paper)
-package. Market impact is treated as what it is — a counterfactual question:
-*what would the price have been had I not traded?*
+Code, checkpoints, and result files for
 
-**Private until the ICAIF '26 camera-ready (double-blind).**
+> Dennis Thumm and Ying Chen. 2026. **Market Impact Estimation via Causal
+> Foundation Models.** In *7th ACM International Conference on AI in Finance
+> (ICAIF '26)*, November 14--17, 2026, Milan, Italy. ACM.
+
+A continuous-time causal prior-data fitted network (PFN) for market impact,
+built as an extension of the released `dotime` package and of the
+continuous-time causal PFN construction of Thumm, Wiedemann and Chen (2026,
+*Towards Continuous-time Causal Foundation Models*). Market impact is treated
+as what it is: a counterfactual question, *what would the price have been had
+I not traded?*
+
+Contact: dennis.thumm@u.nus.edu. License: MIT (see `LICENSE`). Citation:
+`CITATION.cff`.
 
 ## Layout
 
@@ -15,7 +24,7 @@ package. Market impact is treated as what it is — a counterfactual question:
 - `src/dotime_market/evaluation/` — diffusivity, square-root-law, calibration diagnostics
 - `src/dotime_market/data/` — ABIDES / Binance → `dotime.benchmarks.Episode` adapters
 - `src/dotime_market/models/` — continuous-time causal PFN + trainer (adapted from the
-  cited construction's source; the released `dotime` ships only the discrete model, no trainer)
+  CT-CPFN source; the released `dotime` ships only the discrete model, no trainer)
 - `scripts/` — numbered phase entry points; `configs/` — YAML configs
 
 ## Setup
@@ -40,7 +49,7 @@ python scripts/02_train_market_pfn.py --config configs/train_dotpfn.yaml \
     --total-steps 50 --eval-every 25 --save-dir checkpoints/smoke
 ```
 
-See `ARTIFACT.md` for the reviewer-facing overview and reproduction order.
+See `ARTIFACT.md` for the overview, the number-to-file provenance map, and the reproduction order.
 
 ## Reproducing the results
 

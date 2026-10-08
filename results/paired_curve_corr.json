@@ -1,0 +1,171 @@
+{
+  "recurrent_v10s_vs_perstep_v12": {
+    "r_a": 0.9635695647241808,
+    "r_b": 0.9040707743500087,
+    "delta": 0.05949879037417205,
+    "delta_ci": [
+      0.027852246277316334,
+      0.10243337392000705
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10s_softmix_ep.json",
+    "file_b": "output/benchmark_v12_perstep.json"
+  },
+  "perstep_v12_vs_oneshot_v4": {
+    "r_a": 0.9040707743500087,
+    "r_b": 0.681631826268538,
+    "delta": 0.2224389480814707,
+    "delta_ci": [
+      0.15952654475953348,
+      0.27421516683911373
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v12_perstep.json",
+    "file_b": "output/benchmark_prototype_ep.json"
+  },
+  "recurrent_v10s_vs_oneshot_v4": {
+    "r_a": 0.9635695647241808,
+    "r_b": 0.681631826268538,
+    "delta": 0.28193773845564274,
+    "delta_ci": [
+      0.21473868286285858,
+      0.33877647865099303
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10s_softmix_ep.json",
+    "file_b": "output/benchmark_prototype_ep.json"
+  },
+  "perstep_v15_slowtheta_vs_v12_perm": {
+    "r_a": 0.9598789282406369,
+    "r_b": 0.9040707743500087,
+    "delta": 0.05580815389062821,
+    "delta_ci": [
+      0.02389065961973235,
+      0.09426100797763787
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v15.json",
+    "file_b": "output/benchmark_v12_perstep.json"
+  },
+  "perstep_v15_vs_recurrent_v10s": {
+    "r_a": 0.9598789282406369,
+    "r_b": 0.9635695647241808,
+    "delta": -0.003690636483543841,
+    "delta_ci": [
+      -0.02074650176362424,
+      0.009092599489276024
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v15.json",
+    "file_b": "output/benchmark_v10s_softmix_ep.json"
+  },
+  "perstep_v14_window_vs_v12_perm": {
+    "r_a": 0.8564921296384522,
+    "r_b": 0.9040707743500087,
+    "delta": -0.047578644711556484,
+    "delta_ci": [
+      -0.08043300178106269,
+      -0.01030451323449811
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v14.json",
+    "file_b": "output/benchmark_v12_perstep.json"
+  },
+  "recurrent_soft_v10s_vs_hard_v10": {
+    "r_a": 0.9635695647241808,
+    "r_b": 0.9427499312379309,
+    "delta": 0.020819633486249822,
+    "delta_ci": [
+      0.009019787883119532,
+      0.03526535076539922
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10s_softmix_ep.json",
+    "file_b": "output/benchmark_v10_rnn_ep.json"
+  },
+  "oneshot_v13_window_vs_v13_perm": {
+    "r_a": 0.7562392923256078,
+    "r_b": 0.7860695470499157,
+    "delta": -0.029830254724307892,
+    "delta_ci": [
+      -0.2081605474084559,
+      0.14455644879908114
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v13_window.json",
+    "file_b": "output/benchmark_v13_perm.json"
+  },
+  "oneshot_v13_window_vs_v4": {
+    "r_a": 0.7562392923256078,
+    "r_b": 0.681631826268538,
+    "delta": 0.0746074660570698,
+    "delta_ci": [
+      -0.1123510276348435,
+      0.22643043988843387
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v13_window.json",
+    "file_b": "output/benchmark_prototype_ep.json"
+  },
+  "recurrent_v10mix_vs_v10s": {
+    "r_a": 0.9427717896908783,
+    "r_b": 0.9635695647241808,
+    "delta": -0.02079777503330249,
+    "delta_ci": [
+      -0.03557097304304544,
+      -0.0050271832605183735
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10mix.json",
+    "file_b": "output/benchmark_v10s_softmix_ep.json"
+  },
+  "recurrent_v10cap_vs_v10s": {
+    "r_a": 0.9470995426998505,
+    "r_b": 0.9635695647241808,
+    "delta": -0.016470022024330233,
+    "delta_ci": [
+      -0.027464487218431893,
+      -0.004158646009176643
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10cap.json",
+    "file_b": "output/benchmark_v10s_softmix_ep.json"
+  },
+  "recurrent_v10s_s43_vs_s42": {
+    "r_a": 0.9255312581817331,
+    "r_b": 0.9635695647241808,
+    "delta": -0.038038306542447664,
+    "delta_ci": [
+      -0.05801000384711745,
+      -0.0181691882204683
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10s_s43.json",
+    "file_b": "output/benchmark_v10s_softmix_ep.json"
+  },
+  "recurrent_v10s_s44_vs_s42": {
+    "r_a": 0.9166450921134661,
+    "r_b": 0.9635695647241808,
+    "delta": -0.04692447261071464,
+    "delta_ci": [
+      -0.0675826386577181,
+      -0.025429038501134323
+    ],
+    "n_episodes": 2158,
+    "B": 2000,
+    "file_a": "output/benchmark_v10s_s44.json",
+    "file_b": "output/benchmark_v10s_softmix_ep.json"
+  }
+}

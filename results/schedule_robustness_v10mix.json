@@ -1,0 +1,28 @@
+{
+  "args": {
+    "config": "configs/train_market.yaml",
+    "n_batches": 20,
+    "seed": 123,
+    "out": "output/schedule_robustness_v10mix.json",
+    "extra_model": [
+      "recurrent_v10mix=checkpoints/market_v10mix_softmix/recurrent_dotpfn_best.pt"
+    ]
+  },
+  "eval_loss": {
+    "regular": {
+      "transformer_v8": 0.4922962263226509,
+      "recurrent_v10s": 0.4436223432421684,
+      "recurrent_v10mix": 0.4443628668785095
+    },
+    "jittered": {
+      "transformer_v8": 0.4697504684329033,
+      "recurrent_v10s": 0.4263318955898285,
+      "recurrent_v10mix": 0.4338737905025482
+    },
+    "exponential": {
+      "transformer_v8": 0.5037213191390038,
+      "recurrent_v10s": 0.47817535400390626,
+      "recurrent_v10mix": 0.4473409131169319
+    }
+  }
+}
