@@ -112,6 +112,9 @@ other printed number:
   degradation +7.8% -> +0.7%); §3.
 - `seed_ensemble_coverage.json` — seed-mixture interval coverage on the ABIDES
   seed-replay tier (mixture 0.35 / 0.50 against single seeds); §4.3.
+- `equity_transfer_eq50.json` — the burst tier on 50 Nasdaq names with the paper's
+  transformer pair (n=3,802; paired do-head effect +1.14 [1.09, 1.19]; calm/stressed
+  +1.17/+1.10); §4.2.
 - `scale_calibration_cross_eq50.json` — few-shot fit of the per-domain scale
   constant k on a Nasdaq closing-auction tier (five labeled auctions: held-out
   RMSE 0.240 vs last-value 0.280); §4.3. The underlying Nasdaq trades are

@@ -347,6 +347,13 @@ for fam, tag, mix, lo, hi in (("transformer_v4s", "transformer", 0.35, 0.33, 0.3
     C("S4.3 calibration", f"seed-mixture coverage {tag} {mix}", lambda f=fam: J(SE)["families"][f]["mixture"]["coverage80"], mix)
     C("S4.3 calibration", f"single-seed coverage range {tag} low", lambda f=fam: min(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), lo)
     C("S4.3 calibration", f"single-seed coverage range {tag} high", lambda f=fam: max(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), hi)
+EQ = "equity_transfer_eq50.json"
+C("S4.2 equities", "Nasdaq bursts n=3,802", lambda: J(EQ)["n_episodes"], 3802, 0)
+C("S4.2 equities", "paired do-head effect +1.14", lambda: J(EQ)["methods"]["market-dotpfn"]["delta_vs_ablated"], 1.14)
+ci("S4.2 equities", "paired do-head effect", lambda: J(EQ)["methods"]["market-dotpfn"]["delta_ci"], 1.09, 1.19)
+C("S4.2 equities", "calm half +1.17", lambda: J(EQ)["vol_split"]["regimes"]["calm"]["delta_vs_ablated"], 1.17)
+C("S4.2 equities", "stressed half +1.10", lambda: J(EQ)["vol_split"]["regimes"]["stressed"]["delta_vs_ablated"], 1.10)
+C("S4.2 equities", "same transformer checkpoint (v4 pair)", lambda: float("market_v4_soft/" in J(EQ)["args"]["checkpoint"] and "market_v4_ablated_s42/" in J(EQ)["args"]["ablated_checkpoint"]), 1, 0)
 SC = "scale_calibration_cross_eq50.json"
 C("S4.3 scale k", "five labeled auctions: held-out RMSE 0.240", lambda: J(SC)["few_shot"]["sizes"]["5"]["rmse_median"], 0.240, 3)
 C("S4.3 scale k", "last-value predictor RMSE 0.280", lambda: J(SC)["few_shot"]["ar1_rmse"], 0.280, 3)
