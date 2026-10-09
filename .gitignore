@@ -29,3 +29,10 @@ data/raw/
 # Tooling
 .claude/
 log/
+
+# Databento pull manifest (dataset names, dates, costs; no data, no keys)
+!data/raw/
+data/raw/*
+!data/raw/databento/
+data/raw/databento/*
+!data/raw/databento/manifest.json

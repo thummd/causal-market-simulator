@@ -118,5 +118,11 @@ other printed number:
 - `scale_calibration_cross_eq50.json` — few-shot fit of the per-domain scale
   constant k on a Nasdaq closing-auction tier (five labeled auctions: held-out
   RMSE 0.240 vs last-value 0.280); §4.3. The underlying Nasdaq trades are
-  licensed from Databento and are not redistributed; `scripts/31_databento_pull.py`
-  in the development repository documents the pull.
+  licensed from Databento and are not redistributed. `scripts/31_databento_pull.py`
+  reproduces the pull from a Databento API key (`DATABENTO_API_KEY` in `.env`) and
+  `data/raw/databento/manifest.json` lists every dataset, symbol, and date range it
+  fetched. `scripts/32_equity_transfer.py` is the Nasdaq burst tier of §4.2,
+  `scripts/33_closing_auction.py` and `scripts/36_scale_calibration.py` the
+  closing-auction tier and the few-shot fit of the scale constant k of §4.3
+  (modules `data/databento.py`, `data/auction.py`, `data/fomc.py`,
+  `evaluation/transfer.py`; tests in `tests/test_databento.py`).

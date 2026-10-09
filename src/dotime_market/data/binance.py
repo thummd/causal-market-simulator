@@ -26,7 +26,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-__all__ = ["download_agg_trades", "bin_agg_trades"]
+__all__ = ["download_agg_trades", "bin_agg_trades", "bin_signed_trades"]
 
 _BASE = "https://data.binance.vision/data/futures/um/daily/aggTrades"
 
@@ -70,23 +70,38 @@ def download_agg_trades(
     return df
 
 
-def bin_agg_trades(df: pd.DataFrame, bar_seconds: int = 60) -> pd.DataFrame:
-    """Aggregate trades into fixed bars of signed flow and log price.
+def bin_signed_trades(
+    t_s: np.ndarray,
+    sign: np.ndarray,
+    qty: np.ndarray,
+    price: np.ndarray,
+    bar_seconds: int = 60,
+) -> pd.DataFrame:
+    """Venue-agnostic core of the bar builder: signed trades -> fixed bars.
 
-    Returns a DataFrame indexed 0..T-1 with columns:
+    Shared by the Binance aggTrades adapter and the Databento equity/futures
+    adapter so every real-data tier feeds the burst detector the same frame.
 
-    - ``time``      : bar-end epoch seconds
-    - ``flow``      : signed base-asset volume (aggressive buys − sells)
-    - ``price_bps`` : ``1e4 * log(last_price / first_bar_last_price)``
-    - ``volume``    : unsigned base-asset volume (for participation rates)
+    Args:
+        t_s: Trade timestamps in epoch seconds, non-decreasing.
+        sign: Per-trade aggressor sign: +1 aggressive buy, -1 aggressive
+            sell, 0 unsigned (contributes to ``volume``/``n_trades`` only).
+        qty: Traded quantity per trade (base asset, shares, or contracts).
+        price: Trade price per trade.
+        bar_seconds: Bar width in seconds.
 
-    Empty bars forward-fill the price and carry zero flow/volume.
+    Returns:
+        DataFrame indexed 0..T-1 with columns ``time`` (bar-end epoch
+        seconds), ``flow`` (signed volume), ``price_bps`` (``1e4 * log`` of
+        the bar's last price over the first bar's last price, forward-filled
+        through empty bars), ``volume`` (unsigned volume), ``n_trades``.
+
+    Raises:
+        ValueError: If the inputs are empty.
     """
-    t = df["transact_time"].to_numpy() // 1000  # ms -> s
-    bar = (t - t[0]) // bar_seconds
-    sign = np.where(df["is_buyer_maker"].to_numpy(), -1.0, 1.0)
-    qty = df["quantity"].to_numpy()
-    price = df["price"].to_numpy()
+    if len(t_s) == 0:
+        raise ValueError("no trades to bin")
+    bar = (t_s - t_s[0]) // bar_seconds
 
     n_bars = int(bar[-1]) + 1
     flow = np.zeros(n_bars)
@@ -105,12 +120,31 @@ def bin_agg_trades(df: pd.DataFrame, bar_seconds: int = 60) -> pd.DataFrame:
         np.maximum.accumulate(idx, out=idx)
         last_price = last_price[idx]
 
-    return pd.DataFrame(
+    bars = pd.DataFrame(
         {
-            "time": t[0] + bar_seconds * (np.arange(n_bars) + 1),
+            "time": t_s[0] + bar_seconds * (np.arange(n_bars) + 1),
             "flow": flow,
             "price_bps": 1e4 * np.log(last_price / last_price[0]),
             "volume": volume,
             "n_trades": n_trades,
         }
+    )
+    # The bps anchor is not recoverable from the frame itself (bar 0 is 0 by
+    # construction); expose it so absolute prices (e.g. a cross print) can be
+    # placed on the same scale.
+    bars.attrs["anchor_price"] = float(last_price[0])
+    return bars
+
+
+def bin_agg_trades(df: pd.DataFrame, bar_seconds: int = 60) -> pd.DataFrame:
+    """Aggregate Binance aggTrades into fixed bars of signed flow and log price.
+
+    Thin adapter over :func:`bin_signed_trades`: maps ``is_buyer_maker`` to
+    the aggressor sign (buyer passive => aggressor sold => -1) and converts
+    millisecond timestamps to seconds. Output columns are documented there.
+    """
+    t = df["transact_time"].to_numpy() // 1000  # ms -> s
+    sign = np.where(df["is_buyer_maker"].to_numpy(), -1.0, 1.0)
+    return bin_signed_trades(
+        t, sign, df["quantity"].to_numpy(), df["price"].to_numpy(), bar_seconds=bar_seconds
     )
