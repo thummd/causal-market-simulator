@@ -76,6 +76,8 @@ TABLE1_CELLS = {
         "Square-root law": (2.11, 1.99, 2.22), "Return regression": (3.27, 3.07, 3.48),
         "Almgren-Chriss": (1.11, 1.02, 1.20), "AR1": (1.41, 1.30, 1.52),
         "Mean": (-0.00, -0.00, 0.00)}),
+    "Nasdaq": ("equity_transfer_eq50.json", 3802, {
+        "M-DoT-PFN": (1.14, 1.09, 1.19), "OW propagator": (0.18, 0.14, 0.22), "Square-root law": (0.76, 0.71, 0.81), "Return regression": (0.94, 0.87, 1.0), "Almgren-Chriss": (0.36, 0.34, 0.38), "AR1": (0.25, 0.2, 0.3), "Mean": (0.0, 0.0, 0.0)}),
     "SOL": ("crypto_SOLUSDT_q2_full.json", 757, {
         "M-DoT-PFN": (1.22, 1.10, 1.34), "OW propagator": (0.74, 0.62, 0.85),
         "Square-root law": (1.60, 1.47, 1.73), "Return regression": (2.49, 2.31, 2.66),
@@ -348,6 +350,9 @@ for fam, tag, mix, lo, hi in (("transformer_v4s", "transformer", 0.35, 0.33, 0.3
     C("S4.3 calibration", f"single-seed coverage range {tag} low", lambda f=fam: min(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), lo)
     C("S4.3 calibration", f"single-seed coverage range {tag} high", lambda f=fam: max(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), hi)
 EQ = "equity_transfer_eq50.json"
+C("S6.2 equities", "Nasdaq signed bias +0.48 (50 names)", lambda: J(EQ)["methods"]["market-dotpfn"]["bias"], 0.48)
+C("S6.2 equities", "Nasdaq ablated signed bias -0.65", lambda: J(EQ)["methods"]["ablated-dotpfn"]["bias"], -0.65)
+C("S6.2 equities", "ten largest names signed bias +0.01", lambda: J("equity_transfer.json")["methods"]["market-dotpfn"]["bias"], 0.01)
 C("S4.2 equities", "Nasdaq bursts n=3,802", lambda: J(EQ)["n_episodes"], 3802, 0)
 C("S4.2 equities", "paired do-head effect +1.14", lambda: J(EQ)["methods"]["market-dotpfn"]["delta_vs_ablated"], 1.14)
 ci("S4.2 equities", "paired do-head effect", lambda: J(EQ)["methods"]["market-dotpfn"]["delta_ci"], 1.09, 1.19)
