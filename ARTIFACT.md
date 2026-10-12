@@ -115,6 +115,13 @@ other printed number:
 - `equity_transfer_eq50.json` — the burst tier on 50 Nasdaq names with the paper's
   transformer pair (n=3,802; paired do-head effect +1.14 [1.09, 1.19]; calm/stressed
   +1.17/+1.10); §4.2.
+- `operator_semantics.json` — the semi-synthetic counterfactual check of §6.2
+  (`scripts/43_operator_semantics.py` in the development repository): metaorders with a
+  known kernel injected into real Nasdaq burst contexts, 701 episodes per arm, 24 names;
+  the soft-mix transformer seed 42 recovers the exact effects at correlation 0.54 to 0.56
+  while over-predicting scale by 1.6 to 1.7x.
+- `figures/fig_arch_source.tex` — TikZ source of the architecture figure (the camera-ready
+  ships it pre-rendered as a PDF for ACM's HTML production).
 - `scale_calibration_cross_eq50.json` — few-shot fit of the per-domain scale
   constant k on a Nasdaq closing-auction tier (five labeled auctions: held-out
   RMSE 0.240 vs last-value 0.280); §4.3. The underlying Nasdaq trades are

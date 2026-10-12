@@ -354,6 +354,13 @@ ci("S4.2 equities", "paired do-head effect", lambda: J(EQ)["methods"]["market-do
 C("S4.2 equities", "calm half +1.17", lambda: J(EQ)["vol_split"]["regimes"]["calm"]["delta_vs_ablated"], 1.17)
 C("S4.2 equities", "stressed half +1.10", lambda: J(EQ)["vol_split"]["regimes"]["stressed"]["delta_vs_ablated"], 1.10)
 C("S4.2 equities", "same transformer checkpoint (v4 pair)", lambda: float("market_v4_soft/" in J(EQ)["args"]["checkpoint"] and "market_v4_ablated_s42/" in J(EQ)["args"]["ablated_checkpoint"]), 1, 0)
+OS = "operator_semantics.json"
+C("S6.2 semi-synthetic", "independent-dose correlation 0.54", lambda: J(OS)["S_semisynthetic"]["independent"]["pfn"]["corr"], 0.54)
+C("S6.2 semi-synthetic", "burst-confounded correlation 0.56", lambda: J(OS)["S_semisynthetic"]["burst"]["pfn"]["corr"], 0.56)
+C("S6.2 semi-synthetic", "over-prediction factor 1.6 (independent dose)", lambda: 1.0 / J(OS)["S_semisynthetic"]["independent"]["pfn"]["k_truth_on_pred"], 1.6, 1)
+C("S6.2 semi-synthetic", "over-prediction factor 1.7 (burst dose)", lambda: 1.0 / J(OS)["S_semisynthetic"]["burst"]["pfn"]["k_truth_on_pred"], 1.7, 1)
+C("S6.2 semi-synthetic", "episodes per arm 701", lambda: J(OS)["S_semisynthetic"]["independent"]["n_episodes"], 701, 0)
+C("S6.2 semi-synthetic", "names 24", lambda: J(OS)["S_semisynthetic"]["independent"]["n_symbols_fitted"], 24, 0)
 SC = "scale_calibration_cross_eq50.json"
 C("S4.3 scale k", "five labeled auctions: held-out RMSE 0.240", lambda: J(SC)["few_shot"]["sizes"]["5"]["rmse_median"], 0.240, 3)
 C("S4.3 scale k", "last-value predictor RMSE 0.280", lambda: J(SC)["few_shot"]["ar1_rmse"], 0.280, 3)
