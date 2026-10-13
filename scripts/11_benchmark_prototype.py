@@ -20,6 +20,13 @@ comparison is the benchmark's point.
 
 Usage:
     python scripts/11_benchmark_prototype.py --n-days 40 --per-day 60
+    python scripts/11_benchmark_prototype.py --venue nasdaq --symbols AAPL MSFT \
+        --dates-from 2026-06-01 --n-days 92 --per-day 12
+
+With --venue nasdaq the bar tape comes from the Databento trade cache
+(data/databento.py) instead of the Binance archive; the metaorder
+construction, the episode encoder, and the readout are unchanged, so the
+Nasdaq benchmark is the crypto benchmark on a different venue.
 """
 
 from __future__ import annotations
@@ -47,6 +54,30 @@ _rec = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_rec)
 
 DUR_CLASSES = [(2, 3), (4, 7), (8, 15), (16, 31)]
+
+
+def _load_bars(venue: str, symbol: str, day: str) -> pd.DataFrame:
+    """Return the one-minute bar tape of ``symbol`` on ``day`` for a venue.
+
+    Both venues end in the shared bar builder (``binance.bin_signed_trades``), so
+    the frame has the same columns (``flow, price, volume, n_trades``) and the
+    metaorder construction downstream does not know which venue it is on.
+
+    Args:
+        venue: ``binance`` (public aggTrades archive) or ``nasdaq`` (Databento cache).
+        symbol: Venue symbol, e.g. ``BTCUSDT`` or ``AAPL``.
+        day: ISO date.
+
+    Returns:
+        Per-bar DataFrame at 60-second resolution.
+
+    Raises:
+        Exception: whatever the loader raises for a missing day; callers skip it.
+    """
+    if venue == "nasdaq":
+        from dotime_market.data.databento import bin_trades, load_trades
+        return bin_trades(load_trades(symbol, day), bar_seconds=60)
+    return bin_agg_trades(download_agg_trades(symbol, day), bar_seconds=60)
 
 
 def sample_day_metaorders(bars: pd.DataFrame, rng, n_traders: int = 2,
@@ -81,6 +112,10 @@ def sample_day_metaorders(bars: pd.DataFrame, rng, n_traders: int = 2,
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--symbol", default="BTCUSDT")
+    ap.add_argument("--venue", choices=["binance", "nasdaq"], default="binance",
+                    help="bar-tape source; nasdaq reads the Databento trade cache")
+    ap.add_argument("--symbols", nargs="*", default=None, metavar="SYM",
+                    help="nasdaq: symbol panel (default: --symbol)")
     ap.add_argument("--dates-from", default="2026-04-01")
     ap.add_argument("--n-days", type=int, default=40)
     ap.add_argument("--per-day", type=int, default=60)
@@ -106,39 +141,41 @@ def main() -> None:
 
     y0, m0, d0 = map(int, args.dates_from.split("-"))
     rows = []
+    symbols = args.symbols or [args.symbol]
     for k in range(args.n_days):
         day = str(date(y0, m0, d0) + timedelta(k))
-        try:
-            bars = bin_agg_trades(download_agg_trades(args.symbol, day), bar_seconds=60)
-        except Exception:
-            continue
-        for i0, dur in sample_day_metaorders(bars, rng, per_day=args.per_day):
+        for symbol in symbols:
             try:
-                ep = burst_episode(bars, event_idx=i0, rng=rng, pre_bars=90,
-                                   post_bars=dur + 1, window_bars=dur)
+                bars = _load_bars(args.venue, symbol, day)
             except Exception:
                 continue
-            if args.count_handle:
-                cnt = bars["n_trades"].to_numpy()
-                pre = cnt[i0 - 90:i0]
-                exc = (cnt[i0:i0 + dur].mean() - pre.mean()) / max(pre.std(), 1e-9)
-                ep.intervention.values = float(np.sign(ep.intervention.values) * abs(exc))
-            c = float(ep.intervention.values)
-            if c == 0:
-                continue
-            sgn = math.copysign(1.0, c)
-            onset = min(ep.intervention.times)
-            pre_ref = float(ep.x_obs[onset - 1, 1])
-            y = float(ep.y_true.reshape(-1)[0])
-            if args.recursive:
-                p_c = _rec.rolled(causal, ep, dur, c)
-                p_a = _rec.rolled(ablated, ep, dur, c)
-            else:
-                p_c = float(causal.predict(ep).reshape(-1)[0])
-                p_a = float(ablated.predict(ep).reshape(-1)[0])
-            rows.append({"dur": dur, "c_abs": abs(c),
-                         "measured": sgn * (y - pre_ref),
-                         "response": sgn * (p_c - p_a)})
+            for i0, dur in sample_day_metaorders(bars, rng, per_day=args.per_day):
+                try:
+                    ep = burst_episode(bars, event_idx=i0, rng=rng, pre_bars=90,
+                                       post_bars=dur + 1, window_bars=dur)
+                except Exception:
+                    continue
+                if args.count_handle:
+                    cnt = bars["n_trades"].to_numpy()
+                    pre = cnt[i0 - 90:i0]
+                    exc = (cnt[i0:i0 + dur].mean() - pre.mean()) / max(pre.std(), 1e-9)
+                    ep.intervention.values = float(np.sign(ep.intervention.values) * abs(exc))
+                c = float(ep.intervention.values)
+                if c == 0:
+                    continue
+                sgn = math.copysign(1.0, c)
+                onset = min(ep.intervention.times)
+                pre_ref = float(ep.x_obs[onset - 1, 1])
+                y = float(ep.y_true.reshape(-1)[0])
+                if args.recursive:
+                    p_c = _rec.rolled(causal, ep, dur, c)
+                    p_a = _rec.rolled(ablated, ep, dur, c)
+                else:
+                    p_c = float(causal.predict(ep).reshape(-1)[0])
+                    p_a = float(ablated.predict(ep).reshape(-1)[0])
+                rows.append({"dur": dur, "c_abs": abs(c), "symbol": symbol, "day": day,
+                             "measured": sgn * (y - pre_ref),
+                             "response": sgn * (p_c - p_a)})
     df = pd.DataFrame(rows)
     print(f"{len(df)} episodes evaluated")
 

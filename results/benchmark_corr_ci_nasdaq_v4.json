@@ -1,0 +1,11 @@
+{
+  "corr": 0.6213039388654146,
+  "ci": [
+    0.5353869334751373,
+    0.6927689723979994
+  ],
+  "n_episodes": 7162,
+  "B": 2000,
+  "seed": 0,
+  "source": "/home/dennis/repos/causal-market-simulator/output/benchmark_nasdaq_v4.json"
+}

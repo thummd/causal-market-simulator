@@ -9,8 +9,10 @@ interval [q25, q75], plus median interval widths, for the causal PFN and
 its do-ablated twin (same head, no do-information).
 
 Tiers: synthetic suites (counterfactual y_true; gamma in {0, 1, 2}),
-ABIDES seed-replay episodes (counterfactual y_true), and Binance flow
-bursts (factual y_true; cached data required).
+ABIDES seed-replay episodes (counterfactual y_true), Binance flow
+bursts (factual y_true; cached data required), and, with --nasdaq-symbols,
+the Nasdaq flow-burst suite of scripts/32_equity_transfer.py (factual
+y_true; Databento trade cache required).
 """
 
 from __future__ import annotations
@@ -66,6 +68,12 @@ def main() -> None:
     ap.add_argument("--n-synthetic", type=int, default=300)
     ap.add_argument("--n-abides", type=int, default=300)
     ap.add_argument("--crypto-days", type=int, default=30)
+    ap.add_argument("--nasdaq-symbols", nargs="*", default=[], metavar="SYM",
+                    help="Nasdaq burst tier built exactly like scripts/32 (Databento trade cache); "
+                         "empty = skip the tier")
+    ap.add_argument("--nasdaq-start", default="2026-06-01", metavar="YYYY-MM-DD")
+    ap.add_argument("--nasdaq-end", default="2026-08-31", metavar="YYYY-MM-DD")
+    ap.add_argument("--nasdaq-z-thresh", type=float, default=5.0)
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--out", default="output/calibration.json")
     args = ap.parse_args()
@@ -92,6 +100,20 @@ def main() -> None:
         for sym in ("BTCUSDT", "ETHUSDT"):
             # burst episodes are SOFT by construction (see data/liquidation.py)
             suites[f"{sym[:3]} bursts"] = build_binance_suite(symbol=sym, dates=dates)
+
+    if args.nasdaq_symbols:
+        # Same builder, dates, detector, and query draw as scripts/32, so the
+        # calibration tier is the 3,802-episode suite behind Table 2's Nasdaq column.
+        from dotime_market.data.databento import RAW_DIR, build_databento_suite, trading_days
+        dates = sorted({d for s in args.nasdaq_symbols
+                        for d in trading_days(s, RAW_DIR / "trades", args.nasdaq_start, args.nasdaq_end)})
+        print(f"building Nasdaq burst suite: {len(args.nasdaq_symbols)} names x {len(dates)} days ...",
+              flush=True)
+        suites["Nasdaq bursts"] = build_databento_suite(
+            args.nasdaq_symbols, dates, bar_seconds=60, cache_dir=RAW_DIR / "trades",
+            z_thresh=args.nasdaq_z_thresh, n_queries=1,
+        )
+        print(f"{len(suites['Nasdaq bursts'])} burst episodes", flush=True)
 
     results = {"args": vars(args), "tiers": {}}
     print(f"\n{'tier':>16s}  {'model':>8s}  {'n':>5s}  {'cov80':>6s}  {'cov50':>6s}  "

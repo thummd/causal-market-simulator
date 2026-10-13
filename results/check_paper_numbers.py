@@ -349,6 +349,22 @@ for fam, tag, mix, lo, hi in (("transformer_v4s", "transformer", 0.35, 0.33, 0.3
     C("S4.3 calibration", f"seed-mixture coverage {tag} {mix}", lambda f=fam: J(SE)["families"][f]["mixture"]["coverage80"], mix)
     C("S4.3 calibration", f"single-seed coverage range {tag} low", lambda f=fam: min(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), lo)
     C("S4.3 calibration", f"single-seed coverage range {tag} high", lambda f=fam: max(J(SE)["families"][f][f"single_seed{i}"]["coverage80"] for i in range(3)), hi)
+BN10, BN4, PN = "benchmark_corr_ci_nasdaq_v10s.json", "benchmark_corr_ci_nasdaq_v4.json", "paired_curve_corr_nasdaq.json"
+C("S6.2 Nasdaq benchmark", "recurrent curve correlation +0.95", lambda: J(BN10)["corr"], 0.95)
+ci("S6.2 Nasdaq benchmark", "recurrent curve correlation", lambda: J(BN10)["ci"], 0.90, 0.97)
+C("S6.2 Nasdaq benchmark", "one-shot curve correlation +0.62", lambda: J(BN4)["corr"], 0.62)
+ci("S6.2 Nasdaq benchmark", "one-shot curve correlation", lambda: J(BN4)["ci"], 0.54, 0.69)
+C("S6.2 Nasdaq benchmark", "paired difference +0.33", lambda: J(PN)["recurrent_nasdaq_vs_oneshot_nasdaq"]["delta"], 0.33)
+ci("S6.2 Nasdaq benchmark", "paired difference", lambda: J(PN)["recurrent_nasdaq_vs_oneshot_nasdaq"]["delta_ci"], 0.27, 0.37)
+C("S6.2 Nasdaq benchmark", "episodes 7,162", lambda: J(BN10)["n_episodes"], 7162, 0)
+C("S6.2 Nasdaq benchmark", "recurrent k = 0.28 (cell estimator)",
+  lambda: sum(c["measured"] * c["n"] for c in J("benchmark_nasdaq_v10s.json")["classes"]) / sum(c["response"] * c["n"] for c in J("benchmark_nasdaq_v10s.json")["classes"]), 0.28)
+CN = "calibration_nasdaq.json"
+C("Tab.3 Nasdaq", "causal coverage80 0.47", lambda: J(CN)["tiers"]["Nasdaq bursts"]["causal"]["coverage80"], 0.47)
+C("Tab.3 Nasdaq", "ablated coverage80 0.56", lambda: J(CN)["tiers"]["Nasdaq bursts"]["ablated"]["coverage80"], 0.56)
+C("Tab.3 Nasdaq", "causal median width80 2.98", lambda: J(CN)["tiers"]["Nasdaq bursts"]["causal"]["median_width80"], 2.98)
+C("Tab.3 Nasdaq", "ablated median width80 3.40", lambda: J(CN)["tiers"]["Nasdaq bursts"]["ablated"]["median_width80"], 3.40)
+C("Tab.3 Nasdaq", "n=3,802 queries", lambda: J(CN)["tiers"]["Nasdaq bursts"]["causal"]["n"], 3802, 0)
 EQ = "equity_transfer_eq50.json"
 C("S6.2 equities", "Nasdaq signed bias +0.48 (50 names)", lambda: J(EQ)["methods"]["market-dotpfn"]["bias"], 0.48)
 C("S6.2 equities", "Nasdaq ablated signed bias -0.65", lambda: J(EQ)["methods"]["ablated-dotpfn"]["bias"], -0.65)

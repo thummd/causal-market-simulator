@@ -1,0 +1,15 @@
+{
+  "recurrent_nasdaq_vs_oneshot_nasdaq": {
+    "r_a": 0.9461834070377048,
+    "r_b": 0.6213039388654146,
+    "delta": 0.3248794681722902,
+    "delta_ci": [
+      0.26753842330115846,
+      0.37139838204438314
+    ],
+    "n_episodes": 7162,
+    "B": 2000,
+    "file_a": "output/benchmark_nasdaq_v10s.json",
+    "file_b": "output/benchmark_nasdaq_v4.json"
+  }
+}

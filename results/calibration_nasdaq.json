@@ -1,0 +1,132 @@
+{
+  "args": {
+    "checkpoint": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "ablated_checkpoint": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "n_synthetic": 0,
+    "n_abides": 0,
+    "crypto_days": 0,
+    "nasdaq_symbols": [
+      "AAPL",
+      "ABNB",
+      "ADBE",
+      "ADI",
+      "ADP",
+      "AMAT",
+      "AMD",
+      "AMGN",
+      "AMZN",
+      "ASML",
+      "AVGO",
+      "BKNG",
+      "CDNS",
+      "CMCSA",
+      "COST",
+      "CSCO",
+      "CSX",
+      "CTAS",
+      "FTNT",
+      "GILD",
+      "GOOGL",
+      "HON",
+      "INTC",
+      "INTU",
+      "ISRG",
+      "KLAC",
+      "LRCX",
+      "MAR",
+      "MDLZ",
+      "MELI",
+      "META",
+      "MRVL",
+      "MSFT",
+      "MU",
+      "NFLX",
+      "NVDA",
+      "ORLY",
+      "PANW",
+      "PDD",
+      "PEP",
+      "PYPL",
+      "QCOM",
+      "QQQ",
+      "REGN",
+      "SBUX",
+      "SNPS",
+      "SPY",
+      "TSLA",
+      "TXN",
+      "VRTX"
+    ],
+    "nasdaq_start": "2026-06-01",
+    "nasdaq_end": "2026-08-31",
+    "nasdaq_z_thresh": 5.0,
+    "device": "cpu",
+    "out": "output/calibration_nasdaq.json"
+  },
+  "tiers": {
+    "synthetic g=0": {
+      "causal": {
+        "n": 0,
+        "coverage80": NaN,
+        "coverage50": NaN,
+        "median_width80": NaN,
+        "median_width50": NaN
+      },
+      "ablated": {
+        "n": 0,
+        "coverage80": NaN,
+        "coverage50": NaN,
+        "median_width80": NaN,
+        "median_width50": NaN
+      }
+    },
+    "synthetic g=1": {
+      "causal": {
+        "n": 0,
+        "coverage80": NaN,
+        "coverage50": NaN,
+        "median_width80": NaN,
+        "median_width50": NaN
+      },
+      "ablated": {
+        "n": 0,
+        "coverage80": NaN,
+        "coverage50": NaN,
+        "median_width80": NaN,
+        "median_width50": NaN
+      }
+    },
+    "synthetic g=2": {
+      "causal": {
+        "n": 0,
+        "coverage80": NaN,
+        "coverage50": NaN,
+        "median_width80": NaN,
+        "median_width50": NaN
+      },
+      "ablated": {
+        "n": 0,
+        "coverage80": NaN,
+        "coverage50": NaN,
+        "median_width80": NaN,
+        "median_width50": NaN
+      }
+    },
+    "Nasdaq bursts": {
+      "causal": {
+        "n": 3802,
+        "coverage80": 0.4708048403263092,
+        "coverage50": 0.24171487987041473,
+        "median_width80": 2.9849839210510254,
+        "median_width50": 1.595944881439209
+      },
+      "ablated": {
+        "n": 3802,
+        "coverage80": 0.5589163303375244,
+        "coverage50": 0.2695949375629425,
+        "median_width80": 3.3959572315216064,
+        "median_width50": 1.6716766357421875
+      }
+    }
+  }
+}

@@ -122,6 +122,13 @@ other printed number:
   while over-predicting scale by 1.6 to 1.7x.
 - `figures/fig_arch_source.tex` — TikZ source of the architecture figure (the camera-ready
   ships it pre-rendered as a PDF for ACM's HTML production).
+- `calibration_nasdaq.json` — interval calibration on the Nasdaq burst suite
+  (`scripts/05_calibration.py --nasdaq-symbols ...`, transformer pair): Table 3's Nasdaq row.
+- `benchmark_nasdaq_{v10s,v4}.json`, `benchmark_corr_ci_nasdaq_*.json`,
+  `paired_curve_corr_nasdaq.json` — the metaorder benchmark on ten Nasdaq names
+  (`scripts/11_benchmark_prototype.py --venue nasdaq`, 7,162 seed-0 metaorders scored by the
+  recurrent and transformer pairs; CIs from `scripts/26`, paired delta from `scripts/30`):
+  Table 4's duration-shape and scale-constant cells for Nasdaq.
 - `scale_calibration_cross_eq50.json` — few-shot fit of the per-domain scale
   constant k on a Nasdaq closing-auction tier (five labeled auctions: held-out
   RMSE 0.240 vs last-value 0.280); §4.3. The underlying Nasdaq trades are
