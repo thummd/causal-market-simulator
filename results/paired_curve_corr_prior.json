@@ -1,0 +1,15 @@
+{
+  "recurrent_prior_vs_oneshot_prior": {
+    "r_a": 0.9785484543985086,
+    "r_b": 0.9445310726901138,
+    "delta": 0.034017381708394745,
+    "delta_ci": [
+      0.024906729412501764,
+      0.043131034528146844
+    ],
+    "n_episodes": 4000,
+    "B": 2000,
+    "file_a": "output/benchmark_prior_v10s.json",
+    "file_b": "output/benchmark_prior_v4.json"
+  }
+}

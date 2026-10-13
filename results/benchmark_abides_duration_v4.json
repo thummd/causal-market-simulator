@@ -1,0 +1,5515 @@
+{
+  "args": {
+    "seeds_per_cell": 50,
+    "seed0": 3000,
+    "recurrent": "checkpoints/market_v10s_softmix/recurrent_dotpfn_best.pt",
+    "recurrent_ablated": "checkpoints/market_v10s_softmix_ablated/recurrent_dotpfn_best.pt",
+    "transformer": "checkpoints/market_v4_soft/continuous_do_over_time_pfn_best.pt",
+    "transformer_ablated": "checkpoints/market_v4_ablated_s42/continuous_do_over_time_pfn_best.pt",
+    "device": "cpu",
+    "out_prefix": "output/benchmark_abides_duration"
+  },
+  "tier": "ABIDES seed replay (exact counterfactual effect)",
+  "classes": [
+    {
+      "dur": "2-3",
+      "c_bin": 0,
+      "n": 50,
+      "c_mean": 0.5699983657309293,
+      "measured": 0.34474116921424863,
+      "response": 0.7774294927716255
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 1,
+      "n": 50,
+      "c_mean": 1.1459096733692995,
+      "measured": 0.42442639112472536,
+      "response": 1.4258783555077388
+    },
+    {
+      "dur": "2-3",
+      "c_bin": 2,
+      "n": 50,
+      "c_mean": 2.219064968075095,
+      "measured": 1.0786070597171784,
+      "response": 2.6252050871774553
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 0,
+      "n": 50,
+      "c_mean": 0.5354700009270499,
+      "measured": 0.2156211405992508,
+      "response": 0.7305006773397327
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 1,
+      "n": 50,
+      "c_mean": 1.0318382770712804,
+      "measured": 0.760613214969635,
+      "response": 1.2819427939131856
+    },
+    {
+      "dur": "4-7",
+      "c_bin": 2,
+      "n": 50,
+      "c_mean": 2.120253081583765,
+      "measured": 1.4110880976915359,
+      "response": 2.4870437740162017
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 0,
+      "n": 50,
+      "c_mean": 0.5175186777641424,
+      "measured": 0.40621569514274597,
+      "response": 0.6671639409661293
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 1,
+      "n": 50,
+      "c_mean": 1.0376340232149226,
+      "measured": 0.8085538822412491,
+      "response": 1.2140606196969748
+    },
+    {
+      "dur": "8-15",
+      "c_bin": 2,
+      "n": 50,
+      "c_mean": 2.098567315702568,
+      "measured": 1.7123684629797935,
+      "response": 2.3474465468525887
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 0,
+      "n": 50,
+      "c_mean": 0.5172876109368298,
+      "measured": 0.48244336068630217,
+      "response": 0.42236179407686
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 1,
+      "n": 50,
+      "c_mean": 1.0316479533972636,
+      "measured": 1.1315679562091827,
+      "response": 0.8105017872154713
+    },
+    {
+      "dur": "16-31",
+      "c_bin": 2,
+      "n": 50,
+      "c_mean": 2.067922540312233,
+      "measured": 2.0378810453414915,
+      "response": 1.7235736045241357
+    }
+  ],
+  "episodes": [
+    {
+      "dur": 3,
+      "c_abs": 0.43980414032353216,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3000,
+      "measured": 0.0,
+      "response": 0.6263637542724609
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6302071865265327,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3001,
+      "measured": -0.022968292236328125,
+      "response": 0.8472674489021301
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6032870518839891,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3002,
+      "measured": 0.2007976770401001,
+      "response": 0.8169093132019043
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.4792296932578234,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3003,
+      "measured": 0.0,
+      "response": 0.674816370010376
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5084301845666117,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3004,
+      "measured": 0.16416120529174805,
+      "response": 0.7059499025344849
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5170013417295564,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3005,
+      "measured": 0.0,
+      "response": 0.7194603681564331
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.4902555390418974,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3006,
+      "measured": 0.7791202068328857,
+      "response": 0.6850185394287109
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5617411352316397,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3007,
+      "measured": -0.36661863327026367,
+      "response": 0.7661262154579163
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6731414003171476,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3008,
+      "measured": 3.757349967956543,
+      "response": 0.8918439149856567
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6700938219284155,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3009,
+      "measured": 0.3888019323348999,
+      "response": 0.892276406288147
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5131043569125596,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3010,
+      "measured": -0.1364811658859253,
+      "response": 0.7130863666534424
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.520262128408435,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3011,
+      "measured": 0.2361459732055664,
+      "response": 0.7211654186248779
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6970734318187813,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3012,
+      "measured": 0.4695507287979126,
+      "response": 0.9207354784011841
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5922259455482601,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3013,
+      "measured": 7.4818115234375,
+      "response": 0.8023704886436462
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5640826913585396,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3014,
+      "measured": 0.0,
+      "response": 0.7725872993469238
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5209996585550639,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3015,
+      "measured": 0.17879724502563477,
+      "response": 0.7180547714233398
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5285397641370334,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3016,
+      "measured": 0.0,
+      "response": 0.7324631810188293
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.46863343113453326,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3017,
+      "measured": 0.11422109603881836,
+      "response": 0.664818525314331
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5241268205201537,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3018,
+      "measured": 0.0,
+      "response": 0.72752845287323
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.8790319703348172,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3019,
+      "measured": -0.053705692291259766,
+      "response": 1.1256974041461945
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.4873022467722342,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3020,
+      "measured": 0.2186107635498047,
+      "response": 0.6839208602905273
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.49286653601973274,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3021,
+      "measured": 0.5157461166381836,
+      "response": 0.6863409280776978
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5528015713884024,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3022,
+      "measured": 0.0,
+      "response": 0.7579057216644287
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5618060724493319,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3023,
+      "measured": 0.29257500171661377,
+      "response": 0.7680695354938507
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.616179328530856,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3024,
+      "measured": 0.0,
+      "response": 0.8265699148178101
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.782914389137039,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3025,
+      "measured": 0.0823822021484375,
+      "response": 1.0194063186645508
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6399091847634026,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3026,
+      "measured": -0.2332625389099121,
+      "response": 0.8562010526657104
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6410413008533271,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3027,
+      "measured": 0.0,
+      "response": 0.859347015619278
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.4337011381842332,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3028,
+      "measured": 0.6815600395202637,
+      "response": 0.6253476142883301
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5914050978729595,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3029,
+      "measured": -1.675572395324707,
+      "response": 0.8034414947032928
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5512219386600739,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3030,
+      "measured": 0.0,
+      "response": 0.7562668323516846
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6452651811369619,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3031,
+      "measured": 0.06555986404418945,
+      "response": 0.8642591238021851
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.7196434659448491,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3032,
+      "measured": 0.0,
+      "response": 0.9481325149536133
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6674464371204345,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3033,
+      "measured": 0.09300112724304199,
+      "response": 0.889256477355957
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5518950835117533,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3034,
+      "measured": 0.2758939266204834,
+      "response": 0.7491388320922852
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.4630795525109432,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3035,
+      "measured": -0.1957991123199463,
+      "response": 0.6585566997528076
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.507374606603906,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3036,
+      "measured": -0.7071840763092041,
+      "response": 0.7085120677947998
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.49388432303121504,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3037,
+      "measured": 0.0,
+      "response": 0.6933461427688599
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6086384477639275,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3038,
+      "measured": 0.8013630509376526,
+      "response": 0.8229398727416992
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.573555976603194,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3039,
+      "measured": 0.04804825782775879,
+      "response": 0.7793432474136353
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5768471259174643,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3040,
+      "measured": 0.6317896842956543,
+      "response": 0.7811236381530762
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5606199993887894,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3041,
+      "measured": 0.33799564838409424,
+      "response": 0.764630913734436
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5631505824364877,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3042,
+      "measured": 0.12432777881622314,
+      "response": 0.7715827226638794
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5602183069941358,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3043,
+      "measured": 0.09395778179168701,
+      "response": 0.7682223320007324
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5688744077760347,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3044,
+      "measured": 0.04603743553161621,
+      "response": 0.7744306325912476
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5506848468459237,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3045,
+      "measured": 0.05962252616882324,
+      "response": 0.7575031518936157
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5944862839475256,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3046,
+      "measured": 0.19746637344360352,
+      "response": 0.8052103519439697
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.6242569885877544,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3047,
+      "measured": 0.9978452920913696,
+      "response": 0.8405558615922928
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.47550963228795734,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3048,
+      "measured": 1.446425437927246,
+      "response": 0.6706197261810303
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.5235780804806763,
+      "class": "2-3",
+      "shares_per_wake": 20,
+      "seed": 3049,
+      "measured": 0.02584695816040039,
+      "response": 0.7269173860549927
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1922383077642051,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3050,
+      "measured": 0.14082658290863037,
+      "response": 1.4775214195251465
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9137041966315523,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3051,
+      "measured": 0.7666876316070557,
+      "response": 1.166624665260315
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1599118561855137,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3052,
+      "measured": 0.7005894184112549,
+      "response": 1.4432328939437866
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0366662391778803,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3053,
+      "measured": 0.5321328639984131,
+      "response": 1.3048570156097412
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2035022418410817,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3054,
+      "measured": 0.26369643211364746,
+      "response": 1.4921068847179413
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.3987898736607443,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3055,
+      "measured": 0.6166925430297852,
+      "response": 1.7069149017333984
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.130467129282602,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3056,
+      "measured": 0.12838029861450195,
+      "response": 1.4101791381835938
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.3836700969960951,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3057,
+      "measured": 0.9218134880065918,
+      "response": 1.69037564098835
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2847989247337126,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3058,
+      "measured": 0.07038354873657227,
+      "response": 1.5773943364620209
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2560334948653815,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3059,
+      "measured": -0.2082175612449646,
+      "response": 1.543050229549408
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.460994945003414,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3060,
+      "measured": 0.16280531883239746,
+      "response": 1.7808183431625366
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1669403463713135,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3061,
+      "measured": 1.3985919952392578,
+      "response": 1.451129674911499
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9671898023282967,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3062,
+      "measured": 0.18166375160217285,
+      "response": 1.2247118949890137
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0138107661780966,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3063,
+      "measured": 1.0710866451263428,
+      "response": 1.2791596055030823
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0555884004145621,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3064,
+      "measured": 1.158363938331604,
+      "response": 1.326110601425171
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9508969377878624,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3065,
+      "measured": 0.6471533179283142,
+      "response": 1.2064648866653442
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9103434116889034,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3066,
+      "measured": 1.0518640279769897,
+      "response": 1.1628287434577942
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9260893156310038,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3067,
+      "measured": 0.3005160093307495,
+      "response": 1.1782631874084473
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.4346974819265164,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3068,
+      "measured": 0.14674270153045654,
+      "response": 1.7493665516376495
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2022578566184687,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3069,
+      "measured": 0.0,
+      "response": 1.486860752105713
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2719777209810432,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3070,
+      "measured": -0.3291972875595093,
+      "response": 1.5650720596313477
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.3714165299207797,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3071,
+      "measured": 0.6497678160667419,
+      "response": 1.678387463092804
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0738927641813112,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3072,
+      "measured": 0.0,
+      "response": 1.3466667532920837
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.276909448924852,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3073,
+      "measured": 0.0959399938583374,
+      "response": 1.5724996030330658
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.328251155317409,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3074,
+      "measured": 0.4123866558074951,
+      "response": 1.6280758380889893
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9755464375942635,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3075,
+      "measured": 1.1272172927856445,
+      "response": 1.2341513633728027
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.8175204298244392,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3076,
+      "measured": -0.23186814785003662,
+      "response": 1.0555334389209747
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1474218735654846,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3077,
+      "measured": 0.27057838439941406,
+      "response": 1.42837393283844
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9855805309345902,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3078,
+      "measured": 0.0,
+      "response": 1.2437191009521484
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.00122066545364,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3079,
+      "measured": 0.03784835338592529,
+      "response": 1.2630361914634705
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9889165998099985,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3080,
+      "measured": 0.2083359956741333,
+      "response": 1.2511933222413063
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1814982913065921,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3081,
+      "measured": 0.7031992673873901,
+      "response": 1.4654099941253662
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0401202385090171,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3082,
+      "measured": 1.0188231468200684,
+      "response": 1.308729648590088
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9571758871304784,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3083,
+      "measured": 0.0,
+      "response": 1.2135507464408875
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2403444967129647,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3084,
+      "measured": 1.8092628717422485,
+      "response": 1.533432960510254
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1769816892208729,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3085,
+      "measured": 0.10367536544799805,
+      "response": 1.4623711109161377
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.14715238774962,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3086,
+      "measured": 0.25548702478408813,
+      "response": 1.4288898706436157
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0646188478805976,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3087,
+      "measured": 0.08221220970153809,
+      "response": 1.3324591517448425
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0999910790213243,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3088,
+      "measured": 1.1351819038391113,
+      "response": 1.3759551048278809
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.1170286077723237,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3089,
+      "measured": 1.0364248752593994,
+      "response": 1.393036127090454
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2623412755510175,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3090,
+      "measured": 0.7880446910858154,
+      "response": 1.556078314781189
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.5977460994431532,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3091,
+      "measured": 0.17383170127868652,
+      "response": 1.929557204246521
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0822293278475457,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3092,
+      "measured": 0.0,
+      "response": 1.3521366119384766
+    },
+    {
+      "dur": 3,
+      "c_abs": 0.9818424099934407,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3093,
+      "measured": 0.0,
+      "response": 1.2432250678539276
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0079880313725817,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3094,
+      "measured": 0.046919822692871094,
+      "response": 1.272586613893509
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.5156717483449733,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3095,
+      "measured": 0.0,
+      "response": 1.8420730161014944
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.0404019778210511,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3096,
+      "measured": 0.8392128944396973,
+      "response": 1.3090081214904785
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.118092578691645,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3097,
+      "measured": 0.2625439167022705,
+      "response": 1.3962570428848267
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.2255811738194629,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3098,
+      "measured": 0.32513856887817383,
+      "response": 1.5169103145599365
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.25036930024365,
+      "class": "2-3",
+      "shares_per_wake": 40,
+      "seed": 3099,
+      "measured": 0.2943612337112427,
+      "response": 1.5446956530213356
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.0418742178251015,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3100,
+      "measured": 0.2428584098815918,
+      "response": 2.4306222796440125
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.8210850490497197,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3101,
+      "measured": 0.16277408599853516,
+      "response": 2.1838854253292084
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.0827463929884007,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3102,
+      "measured": 0.0424802303314209,
+      "response": 2.4742090702056885
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.1439762702235816,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3103,
+      "measured": 1.7200970649719238,
+      "response": 2.541972279548645
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.004870842522376,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3104,
+      "measured": 0.5701020956039429,
+      "response": 2.38724422454834
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.8059634394777075,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3105,
+      "measured": 0.2854958176612854,
+      "response": 2.165613889694214
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.2476922203996907,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3106,
+      "measured": 2.5653505325317383,
+      "response": 2.654059052467346
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.8410397340442586,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3107,
+      "measured": 0.8382394313812256,
+      "response": 2.2042548060417175
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.3797834066110517,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3108,
+      "measured": 0.7013250589370728,
+      "response": 2.806906580924988
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.289590626848626,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3109,
+      "measured": 1.216451644897461,
+      "response": 2.700650453567505
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.287797057152774,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3110,
+      "measured": 3.4255013465881348,
+      "response": 2.7039185166358948
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.378296897675891,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3111,
+      "measured": 2.0883471965789795,
+      "response": 2.8052903413772583
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.4850948368828276,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3112,
+      "measured": 1.6149674654006958,
+      "response": 2.919952154159546
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.1805682425552773,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3113,
+      "measured": 0.8162752389907837,
+      "response": 2.583323121070862
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.0112884855222664,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3114,
+      "measured": 2.8813352584838867,
+      "response": 2.396454155445099
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.062946368777161,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3115,
+      "measured": 1.1927751302719116,
+      "response": 2.454134225845337
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.416666539907462,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3116,
+      "measured": 0.708669900894165,
+      "response": 2.8439661264419556
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.1439825827586816,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3117,
+      "measured": 0.2851603031158447,
+      "response": 2.5445415154099464
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.3478226368599664,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3118,
+      "measured": 0.32133805751800537,
+      "response": 2.7703635692596436
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.2147318948229615,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3119,
+      "measured": 0.0,
+      "response": 2.6233714818954468
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.378232168265478,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3120,
+      "measured": 0.6139088869094849,
+      "response": 2.8012460470199585
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.1891402421516766,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3121,
+      "measured": 0.8406785726547241,
+      "response": 2.59486186504364
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.161968596842019,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3122,
+      "measured": 0.6350159049034119,
+      "response": 2.549241816624999
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.7880330606709665,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3123,
+      "measured": 0.10271406173706055,
+      "response": 3.2550138235092163
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.9383678812891645,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3124,
+      "measured": 0.62174391746521,
+      "response": 2.313023790717125
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.135977361462473,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3125,
+      "measured": 1.2027149200439453,
+      "response": 2.5356328040361404
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.752355442581982,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3126,
+      "measured": 0.45304441452026367,
+      "response": 3.217446982860565
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.439460968684989,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3127,
+      "measured": 0.3871346712112427,
+      "response": 2.870689272880554
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.9092986282415074,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3128,
+      "measured": -0.07800126075744629,
+      "response": 2.282549262046814
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.7016475944428575,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3129,
+      "measured": 1.0268311500549316,
+      "response": 3.1554582118988037
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.176249168840994,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3130,
+      "measured": 0.6168677806854248,
+      "response": 2.576497197151184
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.108062700116996,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3131,
+      "measured": 0.6135687828063965,
+      "response": 2.504490464925766
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.0767788822364164,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3132,
+      "measured": 0.04184126853942871,
+      "response": 2.469123065471649
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.9372705350665633,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3133,
+      "measured": 5.462940216064453,
+      "response": 2.3098814487457275
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.0548968277475352,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3134,
+      "measured": 1.6787946224212646,
+      "response": 2.4451184570789337
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.442049600499395,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3135,
+      "measured": 0.03428149223327637,
+      "response": 2.8681609630584717
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.074277202890872,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3136,
+      "measured": 1.4219791889190674,
+      "response": 2.462869882583618
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.077539281270664,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3137,
+      "measured": 0.057630300521850586,
+      "response": 2.4704012870788574
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.008770439601676,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3138,
+      "measured": 0.8067467212677002,
+      "response": 2.391674041748047
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.466769715354231,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3139,
+      "measured": 0.19019103050231934,
+      "response": 2.903472065925598
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.437296997370424,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3140,
+      "measured": 0.04988729953765869,
+      "response": 1.7522679045796394
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.4173238902008194,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3141,
+      "measured": 0.28916478157043457,
+      "response": 2.8486282229423523
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.7393047889733448,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3142,
+      "measured": 7.197308540344238,
+      "response": 2.0923957154154778
+    },
+    {
+      "dur": 3,
+      "c_abs": 1.986301442520508,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3143,
+      "measured": 0.5366845726966858,
+      "response": 2.3646830320358276
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.155879006488345,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3144,
+      "measured": 3.424063205718994,
+      "response": 2.5578055381774902
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.6636746255357036,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3145,
+      "measured": 0.24663758277893066,
+      "response": 3.1194258332252502
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.2735743190802373,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3146,
+      "measured": 0.5162591934204102,
+      "response": 2.6888453364372253
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.526793150908476,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3147,
+      "measured": 0.7779407501220703,
+      "response": 2.9679439067840576
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.969866438203202,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3148,
+      "measured": 1.0954328775405884,
+      "response": 3.4559825658798218
+    },
+    {
+      "dur": 3,
+      "c_abs": 2.61782060123673,
+      "class": "2-3",
+      "shares_per_wake": 80,
+      "seed": 3149,
+      "measured": 1.2628588676452637,
+      "response": 3.063400983810425
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.538871737300028,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3150,
+      "measured": -0.4217827320098877,
+      "response": 0.7345852702856064
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5068499295440237,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3151,
+      "measured": -0.12924551963806152,
+      "response": 0.6989828944206238
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5853556583144736,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3152,
+      "measured": 1.1290216445922852,
+      "response": 0.7878569960594177
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.49333730044694013,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3153,
+      "measured": 0.0812833309173584,
+      "response": 0.6824429035186768
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5092852707792758,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3154,
+      "measured": 0.09918367862701416,
+      "response": 0.703313410282135
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.39918294677002364,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3155,
+      "measured": 0.12374043464660645,
+      "response": 0.5760674476623535
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.7271976769087884,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3156,
+      "measured": 0.5255062580108643,
+      "response": 0.9440650939941406
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5280809590913724,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3157,
+      "measured": 0.0,
+      "response": 0.7225944995880127
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4563337051628599,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3158,
+      "measured": 1.278873324394226,
+      "response": 0.6444649696350098
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5816192570855893,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3159,
+      "measured": 0.0,
+      "response": 0.7837033271789551
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.48385968467832424,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3160,
+      "measured": 0.08237648010253906,
+      "response": 0.674773097038269
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5333215425060454,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3161,
+      "measured": 0.09390711784362793,
+      "response": 0.7300217151641846
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.7283950148465574,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3162,
+      "measured": 0.3583555221557617,
+      "response": 0.9459632635116577
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5826658768694245,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3163,
+      "measured": 0.13533306121826172,
+      "response": 0.7848477363586426
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5196690086283087,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3164,
+      "measured": -0.26257216930389404,
+      "response": 0.7148456573486328
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.48931517639735206,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3165,
+      "measured": 0.05407571792602539,
+      "response": 0.68110191822052
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5315104115097871,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3166,
+      "measured": 0.22484242916107178,
+      "response": 0.7280079126358032
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5690436223217815,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3167,
+      "measured": 0.3400228023529053,
+      "response": 0.7650005221366882
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4609923382486263,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3168,
+      "measured": 0.20827817916870117,
+      "response": 0.6479798555374146
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4899201046582255,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3169,
+      "measured": 0.055768489837646484,
+      "response": 0.6769475936889648
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5685588746809578,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3170,
+      "measured": 0.21219122409820557,
+      "response": 0.7675380706787109
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4623647253116161,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3171,
+      "measured": -0.49761268496513367,
+      "response": 0.6446197330951691
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5180406371324376,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3172,
+      "measured": -0.4639386832714081,
+      "response": 0.706404447555542
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.6716854836002756,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3173,
+      "measured": 0.29140782356262207,
+      "response": 0.8822222948074341
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4618706739560644,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3174,
+      "measured": 0.22343897819519043,
+      "response": 0.6489881277084351
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5400458910456426,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3175,
+      "measured": 0.06290966272354126,
+      "response": 0.737507700920105
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.7165347515236222,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3176,
+      "measured": 0.1549525260925293,
+      "response": 0.9336471557617188
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.47111286300243155,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3177,
+      "measured": 0.16045284271240234,
+      "response": 0.6560080051422119
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5404116499324993,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3178,
+      "measured": 0.28822338581085205,
+      "response": 0.7330806255340576
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.6018713426840517,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3179,
+      "measured": 0.11177468299865723,
+      "response": 0.8045929968357086
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4647515317442992,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3180,
+      "measured": 0.035516977310180664,
+      "response": 0.6522082090377808
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.561002470051006,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3181,
+      "measured": -0.3789646327495575,
+      "response": 0.7574770450592041
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5316440036491576,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3182,
+      "measured": 0.14979565143585205,
+      "response": 0.7281555682420731
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5002936815619062,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3183,
+      "measured": 0.6995835304260254,
+      "response": 0.6916950941085815
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.6343287253882968,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3184,
+      "measured": 0.14029884338378906,
+      "response": 0.8422436714172363
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5022536630326713,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3185,
+      "measured": 0.09341287612915039,
+      "response": 0.6938758492469788
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.6168142495235257,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3186,
+      "measured": 0.16065597534179688,
+      "response": 0.821170449256897
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4532472367682436,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3187,
+      "measured": 0.2154231071472168,
+      "response": 0.6410486698150635
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5639647229463921,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3188,
+      "measured": 0.49614977836608887,
+      "response": 0.7640644907951355
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5735864557416994,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3189,
+      "measured": 0.09275484085083008,
+      "response": 0.7747719883918762
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.47386803083367074,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3190,
+      "measured": 0.0,
+      "response": 0.6607816219329834
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.42417724882193664,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3191,
+      "measured": -0.16993451118469238,
+      "response": 0.6087551414966583
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.45437380546844125,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3192,
+      "measured": 0.1464308500289917,
+      "response": 0.6422706060111523
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5344234112508267,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3193,
+      "measured": -0.05379319190979004,
+      "response": 0.7229855060577393
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.734167771047558,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3194,
+      "measured": -0.24449944496154785,
+      "response": 0.9516451358795166
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.41298280236079593,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3195,
+      "measured": 1.7272179126739502,
+      "response": 0.5963053796440363
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.4471530292816458,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3196,
+      "measured": 0.15700435638427734,
+      "response": 0.6294496804475784
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5249686042965169,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3197,
+      "measured": 0.9244155883789062,
+      "response": 0.7190982103347778
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5173000692577671,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3198,
+      "measured": 0.8198772668838501,
+      "response": 0.7074019312858582
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.5808944183887262,
+      "class": "4-7",
+      "shares_per_wake": 20,
+      "seed": 3199,
+      "measured": 1.2489434480667114,
+      "response": 0.7774543762207031
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0980616872209754,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3200,
+      "measured": 0.17835140228271484,
+      "response": 1.3557991981506348
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1524664731850325,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3201,
+      "measured": 0.5065284967422485,
+      "response": 1.41294264793396
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.3752682136055778,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3202,
+      "measured": 0.3879241943359375,
+      "response": 1.664968490600586
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.114780826691734,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3203,
+      "measured": 0.07442069053649902,
+      "response": 1.374349907040596
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.2770124061968304,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3204,
+      "measured": 1.8772597312927246,
+      "response": 1.5560202598571777
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9602555367517235,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3205,
+      "measured": 6.3540239334106445,
+      "response": 1.2012505531311035
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9726438355732357,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3206,
+      "measured": 0.19401788711547852,
+      "response": 1.215012788772583
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.87718904919097,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3207,
+      "measured": 1.468936800956726,
+      "response": 1.1104140281677246
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9148245095058078,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3208,
+      "measured": 0.5617711544036865,
+      "response": 1.1522941589355469
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8357251592026715,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3209,
+      "measured": 1.0569112300872803,
+      "response": 1.0660570859909058
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.970979404135026,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3210,
+      "measured": 0.782280445098877,
+      "response": 1.2147212028503418
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8221573685678526,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3211,
+      "measured": -0.04364728927612305,
+      "response": 1.0477538108825684
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.047974392833554,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3212,
+      "measured": -0.16948533058166504,
+      "response": 1.300275057554245
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1165899503752472,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3213,
+      "measured": 0.2966737747192383,
+      "response": 1.3748854994773865
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1067438757046604,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3214,
+      "measured": 0.48836374282836914,
+      "response": 1.3670361042022705
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9552309581351599,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3215,
+      "measured": 1.4330708980560303,
+      "response": 1.1920928955078125
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9545397112537765,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3216,
+      "measured": 0.6933975219726562,
+      "response": 1.1964693665504456
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0150386493410681,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3217,
+      "measured": 0.6046381592750549,
+      "response": 1.2652349043637514
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1709234493786795,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3218,
+      "measured": 0.2731029987335205,
+      "response": 1.438267044723034
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.094040912321211,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3219,
+      "measured": 0.248093843460083,
+      "response": 1.3513702154159546
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.061593113208413,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3220,
+      "measured": 0.4807671308517456,
+      "response": 1.315292626619339
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0556837781202466,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3221,
+      "measured": 4.751803874969482,
+      "response": 1.3087587356567383
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9765106227528768,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3222,
+      "measured": 0.6329107284545898,
+      "response": 1.220855712890625
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.2969431136961695,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3223,
+      "measured": 0.448575496673584,
+      "response": 1.5781240463256836
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1481789970924396,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3224,
+      "measured": 0.6898608207702637,
+      "response": 1.4114152193069458
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8894564007095909,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3225,
+      "measured": 0.6341124773025513,
+      "response": 1.1226818561553955
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.7767644671186875,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3226,
+      "measured": -0.045806825160980225,
+      "response": 0.9991889744997025
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8442040941373785,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3227,
+      "measured": 0.1459050178527832,
+      "response": 1.073891520500183
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.3915138449462978,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3228,
+      "measured": 0.06277585029602051,
+      "response": 1.6828819513320923
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0431839214014653,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3229,
+      "measured": -0.6495673656463623,
+      "response": 1.290236473083496
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0450067446301576,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3230,
+      "measured": 0.0,
+      "response": 1.296911209821701
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1406287721327766,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3231,
+      "measured": 0.28754520416259766,
+      "response": 1.4015378952026367
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.991335370463114,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3232,
+      "measured": 0.8293405771255493,
+      "response": 1.2340999841690063
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.3484091596875671,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3233,
+      "measured": 0.10124802589416504,
+      "response": 1.6348837167024612
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8434611948025428,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3234,
+      "measured": 0.8673877716064453,
+      "response": 1.071504831314087
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1372512725590005,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3235,
+      "measured": 0.0,
+      "response": 1.4009106159210205
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8256059279956891,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3236,
+      "measured": 0.7569921016693115,
+      "response": 1.0531997680664062
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9088284748504897,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3237,
+      "measured": 1.126734733581543,
+      "response": 1.1472965478897095
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.826366664901357,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3238,
+      "measured": 0.8950052261352539,
+      "response": 1.054290771484375
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1144724528967134,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3239,
+      "measured": 0.37376368045806885,
+      "response": 1.3756343573331833
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.030047842753825,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3240,
+      "measured": 3.6359972953796387,
+      "response": 1.2818793654441833
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1425419230374456,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3241,
+      "measured": -0.3952507972717285,
+      "response": 1.400160312652588
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0840815498316736,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3242,
+      "measured": 0.34911924600601196,
+      "response": 1.3418961018323898
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8517378959096042,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3243,
+      "measured": 1.6231141090393066,
+      "response": 1.0822609215974808
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.8778313625533762,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3244,
+      "measured": 0.3506333827972412,
+      "response": 1.1098378896713257
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.9858671589283192,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3245,
+      "measured": 0.04968374967575073,
+      "response": 1.2280382215976715
+    },
+    {
+      "dur": 6,
+      "c_abs": 0.7703200626026101,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3246,
+      "measured": -0.15454351902008057,
+      "response": 0.9925620555877686
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.1645534080903552,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3247,
+      "measured": -0.09095144271850586,
+      "response": 1.4263930320739746
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.0818193717160451,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3248,
+      "measured": 1.083545446395874,
+      "response": 1.3393700122833252
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.106873710060431,
+      "class": "4-7",
+      "shares_per_wake": 40,
+      "seed": 3249,
+      "measured": 0.574052095413208,
+      "response": 1.3655382990837097
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.5849831213781633,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3250,
+      "measured": 0.5111560821533203,
+      "response": 2.9978909492492676
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.6621735839709073,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3251,
+      "measured": 3.1360974311828613,
+      "response": 1.9800516963005066
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.7977969881953506,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3252,
+      "measured": 2.597963809967041,
+      "response": 2.133505940437317
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.3056443477218176,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3253,
+      "measured": 0.7391648292541504,
+      "response": 2.6896555423736572
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.3398489305757524,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3254,
+      "measured": 1.939478874206543,
+      "response": 2.732161045074463
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.2599882191699923,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3255,
+      "measured": -0.3874242901802063,
+      "response": 2.641332119703293
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.0848298218211085,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3256,
+      "measured": 0.7248306274414062,
+      "response": 2.4478743076324463
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.181310144634893,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3257,
+      "measured": -0.21526527404785156,
+      "response": 2.557473301887512
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.9472848070424265,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3258,
+      "measured": 0.9262256026268005,
+      "response": 2.2973380088806152
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.4642402179737484,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3259,
+      "measured": 0.21776723861694336,
+      "response": 1.763705164194107
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.2432579314332357,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3260,
+      "measured": 2.1360557079315186,
+      "response": 2.624291777610779
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.700167069640022,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3261,
+      "measured": 1.6751818656921387,
+      "response": 2.0236538648605347
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.7824336345865088,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3262,
+      "measured": 2.4474663734436035,
+      "response": 2.1133347153663635
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.8372617690120472,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3263,
+      "measured": 3.025956392288208,
+      "response": 2.1771914958953857
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.619970851345108,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3264,
+      "measured": 2.1195993423461914,
+      "response": 3.0392062067985535
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.026008182405966,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3265,
+      "measured": 1.0498275756835938,
+      "response": 2.3860693871974945
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.3716145215671984,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3266,
+      "measured": 1.5385169982910156,
+      "response": 2.766940116882324
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.8971049400216347,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3267,
+      "measured": 2.8352792263031006,
+      "response": 2.243462383747101
+    },
+    {
+      "dur": 6,
+      "c_abs": 3.2891989093888503,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3268,
+      "measured": 2.928140163421631,
+      "response": 3.770866870880127
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.4732942111262575,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3269,
+      "measured": 1.4286390542984009,
+      "response": 2.878701150417328
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.9268481670389819,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3270,
+      "measured": 0.6118021011352539,
+      "response": 2.2732315063476562
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.2523210005351335,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3271,
+      "measured": 3.0661895275115967,
+      "response": 2.631108283996582
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.8077737083069845,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3272,
+      "measured": 0.40438079833984375,
+      "response": 2.1444696187973022
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.7662543366061088,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3273,
+      "measured": 0.7534937858581543,
+      "response": 3.1987967789173126
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.885169807899209,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3274,
+      "measured": 0.5760209560394287,
+      "response": 2.2302147448062897
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.6717496643988567,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3275,
+      "measured": 1.8580241203308105,
+      "response": 1.9888944625854492
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.3899086557528637,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3276,
+      "measured": 1.4120482206344604,
+      "response": 1.6812734007835388
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.374861853906793,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3277,
+      "measured": 2.2642266750335693,
+      "response": 2.7706974744796753
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.5633241271787173,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3278,
+      "measured": 4.974274158477783,
+      "response": 1.871989930048585
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.023601244808927,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3279,
+      "measured": 1.1036924123764038,
+      "response": 2.3801130056381226
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.1551214628305657,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3280,
+      "measured": 1.4704976081848145,
+      "response": 2.5255279541015625
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.9114832594032933,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3281,
+      "measured": 0.45032715797424316,
+      "response": 2.2543938159942627
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.975643491248099,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3282,
+      "measured": 2.1010115146636963,
+      "response": 3.4252686500549316
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.9380850876902227,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3283,
+      "measured": 1.3503419160842896,
+      "response": 2.2888296842575073
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.695213125468366,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3284,
+      "measured": -0.3175886869430542,
+      "response": 2.0198092460632324
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.6518856360156873,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3285,
+      "measured": 0.5471587181091309,
+      "response": 3.0739554166793823
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.9046642212280165,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3286,
+      "measured": 1.2438278198242188,
+      "response": 2.248707950115204
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.7029536511863133,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3287,
+      "measured": 0.43983301520347595,
+      "response": 2.0283358693122864
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.867532193672116,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3288,
+      "measured": 2.635110855102539,
+      "response": 2.209051251411438
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.9486098904889455,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3289,
+      "measured": 0.20754289627075195,
+      "response": 3.3974244594573975
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.966308583372817,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3290,
+      "measured": 1.8368370532989502,
+      "response": 2.3134644627571106
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.135139114033414,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3291,
+      "measured": 1.6473798751831055,
+      "response": 2.5050037503242493
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.7494883166231445,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3292,
+      "measured": 0.9754834175109863,
+      "response": 2.078357994556427
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.8461839334858245,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3293,
+      "measured": 0.3210422992706299,
+      "response": 3.2825677394866943
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.835467448093382,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3294,
+      "measured": 3.147245168685913,
+      "response": 2.1735397577285767
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.9775004357980654,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3295,
+      "measured": 1.8939590454101562,
+      "response": 2.330813944339752
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.2816343020358785,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3296,
+      "measured": 0.5958865284919739,
+      "response": 2.663224160671234
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.369495850312046,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3297,
+      "measured": 0.6291266679763794,
+      "response": 2.764757752418518
+    },
+    {
+      "dur": 6,
+      "c_abs": 1.8899840448963494,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3298,
+      "measured": 1.492297649383545,
+      "response": 2.2306700944900513
+    },
+    {
+      "dur": 6,
+      "c_abs": 2.6784300726687023,
+      "class": "4-7",
+      "shares_per_wake": 80,
+      "seed": 3299,
+      "measured": 0.8375463485717773,
+      "response": 3.101380944252014
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.48168026563855226,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3300,
+      "measured": 0.49596187472343445,
+      "response": 0.6299172788858414
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4221083907053196,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3301,
+      "measured": 0.46603333950042725,
+      "response": 0.5690741539001465
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.46657475565446727,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3302,
+      "measured": -1.802661418914795,
+      "response": 0.6142185926437378
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5506177323902265,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3303,
+      "measured": 0.12483799457550049,
+      "response": 0.7016804218292236
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.47546983232208406,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3304,
+      "measured": 0.7714732885360718,
+      "response": 0.6225605010986328
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4393487623539465,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3305,
+      "measured": 0.20809555053710938,
+      "response": 0.5859885215759277
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5183814579913549,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3306,
+      "measured": -1.102332592010498,
+      "response": 0.66851806640625
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.45970206626034027,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3307,
+      "measured": 0.2234516143798828,
+      "response": 0.6060395240783691
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5677742868492105,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3308,
+      "measured": 0.7347143888473511,
+      "response": 0.7205274105072021
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5079118715758597,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3309,
+      "measured": 0.4927713871002197,
+      "response": 0.6562910079956055
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4944515724699511,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3310,
+      "measured": 1.0816497802734375,
+      "response": 0.6441309452056885
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.48989126463610516,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3311,
+      "measured": 0.6629347801208496,
+      "response": 0.6384971141815186
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.45755266295984964,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3312,
+      "measured": 0.1368703842163086,
+      "response": 0.6048355102539062
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4819440429599107,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3313,
+      "measured": 0.4912376403808594,
+      "response": 0.6292545795440674
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5540149266569455,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3314,
+      "measured": 0.35864710807800293,
+      "response": 0.7061692476272583
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.397336619142479,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3315,
+      "measured": 2.2985596656799316,
+      "response": 0.5434339046478271
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.42873259394144375,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3316,
+      "measured": 0.2594771385192871,
+      "response": 0.5759433507919312
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5380176361900926,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3317,
+      "measured": 1.6733636856079102,
+      "response": 0.6885368525981903
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.536971444509803,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3318,
+      "measured": -1.4627588987350464,
+      "response": 0.6833347082138062
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.43835161972247855,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3319,
+      "measured": 0.6768527626991272,
+      "response": 0.5848957300186157
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5310878720848842,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3320,
+      "measured": 0.7107746601104736,
+      "response": 0.679370641708374
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5611950284596509,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3321,
+      "measured": 0.885669469833374,
+      "response": 0.7136596664786339
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.42521799105002295,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3322,
+      "measured": 0.8583602905273438,
+      "response": 0.5705627202987671
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4519374535739936,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3323,
+      "measured": 0.5250866413116455,
+      "response": 0.5990147590637207
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.6232698605094168,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3324,
+      "measured": 0.6451277732849121,
+      "response": 0.7755690813064575
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.42425912503029145,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3325,
+      "measured": 0.0,
+      "response": 0.5713128447532654
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.7440910607776741,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3326,
+      "measured": 0.0,
+      "response": 0.9040966033935547
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5682896031658744,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3327,
+      "measured": 0.44017493724823,
+      "response": 0.7210642397403717
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5330892321441354,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3328,
+      "measured": -0.20543789863586426,
+      "response": 0.6825063228607178
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.589111866847558,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3329,
+      "measured": 0.3703193664550781,
+      "response": 0.741284042596817
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.6477492166004516,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3330,
+      "measured": 0.2542717456817627,
+      "response": 0.8041160702705383
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.54821334613747,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3331,
+      "measured": 0.0832977294921875,
+      "response": 0.7001230716705322
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5626074966544673,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3332,
+      "measured": 0.4619917869567871,
+      "response": 0.712189719080925
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5068991621743826,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3333,
+      "measured": 0.43197542428970337,
+      "response": 0.6560203731060028
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5272512221687513,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3334,
+      "measured": -0.3040173053741455,
+      "response": 0.6753246784210205
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4441819223732176,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3335,
+      "measured": 0.6304061412811279,
+      "response": 0.59000563621521
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5447043544168885,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3336,
+      "measured": 0.409318208694458,
+      "response": 0.6955349445343018
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5132069049362048,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3337,
+      "measured": 0.1875290870666504,
+      "response": 0.6636254787445068
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5295731755973399,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3338,
+      "measured": -0.044441938400268555,
+      "response": 0.6777868270874023
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5083830005814103,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3339,
+      "measured": 0.4441240727901459,
+      "response": 0.6577329933643341
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4638985523933926,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3340,
+      "measured": 2.229893207550049,
+      "response": 0.6123976111412048
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.4794487977566806,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3341,
+      "measured": 0.34742236137390137,
+      "response": 0.6285661458969116
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5463084934940599,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3342,
+      "measured": 0.3587510585784912,
+      "response": 0.697147011756897
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5468908911531828,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3343,
+      "measured": 0.23378288745880127,
+      "response": 0.6987530887126923
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.40609560642468334,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3344,
+      "measured": 2.725006580352783,
+      "response": 0.552484929561615
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.6224920563066431,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3345,
+      "measured": 0.19944274425506592,
+      "response": 0.7758614644408226
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5173890992578887,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3346,
+      "measured": 0.11475992202758789,
+      "response": 0.6670764684677124
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.6349252483446516,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3347,
+      "measured": 0.06081986427307129,
+      "response": 0.789716362953186
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.5435480451969732,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3348,
+      "measured": 0.22389698028564453,
+      "response": 0.6943286955356598
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.6237843976644571,
+      "class": "8-15",
+      "shares_per_wake": 20,
+      "seed": 3349,
+      "measured": 0.2432994842529297,
+      "response": 0.777117133140564
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.2726438739878148,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3350,
+      "measured": 0.3554069995880127,
+      "response": 1.4648101273924112
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0569067503879075,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3351,
+      "measured": 1.1543540954589844,
+      "response": 1.2343521118164062
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.5285104480730405,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3352,
+      "measured": -0.5556848049163818,
+      "response": 1.738077163696289
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0544322464010283,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3353,
+      "measured": 0.2944021224975586,
+      "response": 1.2298648357391357
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.1000522097889334,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3354,
+      "measured": 0.9897079467773438,
+      "response": 1.280189037322998
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8097308722250548,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3355,
+      "measured": 2.5265533924102783,
+      "response": 0.9701850600540638
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0983306723454271,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3356,
+      "measured": 0.20375275611877441,
+      "response": 1.278429999947548
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.1274635739714465,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3357,
+      "measured": 0.06285595893859863,
+      "response": 1.3084536790847778
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.1318923306764308,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3358,
+      "measured": 1.6470974683761597,
+      "response": 1.314985454082489
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.044794262686779,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3359,
+      "measured": 1.9295347929000854,
+      "response": 1.2225425690412521
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.032084730918545,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3360,
+      "measured": 1.154444932937622,
+      "response": 1.2081479132175446
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9280955814581978,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3361,
+      "measured": 0.07624208927154541,
+      "response": 1.0990473926067352
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.1545332082150563,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3362,
+      "measured": 0.0,
+      "response": 1.3371474742889404
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.3502744908432658,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3363,
+      "measured": 0.4303264617919922,
+      "response": 1.5475878417491913
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8709483969675307,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3364,
+      "measured": 4.663992404937744,
+      "response": 1.034477949142456
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9769993352351579,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3365,
+      "measured": 2.1392927169799805,
+      "response": 1.1498310565948486
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.967705913538921,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3366,
+      "measured": 1.963246464729309,
+      "response": 1.1399431228637695
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0522111791818374,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3367,
+      "measured": 1.0826172828674316,
+      "response": 1.2283869981765747
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.775827906589938,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3368,
+      "measured": -5.573990821838379,
+      "response": 0.9355539679527283
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0808982443196566,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3369,
+      "measured": 0.460146427154541,
+      "response": 1.257904291152954
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9289017483052722,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3370,
+      "measured": 0.39123618602752686,
+      "response": 1.097981333732605
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9853054635871528,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3371,
+      "measured": -0.024149179458618164,
+      "response": 1.1576542258262634
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9951962601175699,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3372,
+      "measured": 0.17932581901550293,
+      "response": 1.1700047384947538
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0002229551748176,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3373,
+      "measured": 1.196919322013855,
+      "response": 1.1734390258789062
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.982061989016688,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3374,
+      "measured": 2.8007712364196777,
+      "response": 1.1551139652729034
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0150114655232163,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3375,
+      "measured": -0.5895769596099854,
+      "response": 1.1910017728805542
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8527761973216066,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3376,
+      "measured": 0.6125435829162598,
+      "response": 1.0176354050636292
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9744047640804215,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3377,
+      "measured": 2.8140721321105957,
+      "response": 1.1480026245117188
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9665333026244539,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3378,
+      "measured": -0.4602060317993164,
+      "response": 1.1396980285644531
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.109695670161746,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3379,
+      "measured": 0.3289637267589569,
+      "response": 1.2904462814331055
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8668634960491747,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3380,
+      "measured": 0.491926908493042,
+      "response": 1.0333948135375977
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0599665417869144,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3381,
+      "measured": 1.687838077545166,
+      "response": 1.2378112077713013
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8967564485100412,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3382,
+      "measured": 1.5259132385253906,
+      "response": 1.0652776658535004
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.1461014389662423,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3383,
+      "measured": 0.34919536113739014,
+      "response": 1.3271650075912476
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8993920430373146,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3384,
+      "measured": 1.4691338539123535,
+      "response": 1.0657587051391602
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.038094772321776,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3385,
+      "measured": 0.1881392002105713,
+      "response": 1.2135018110275269
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8683532247398608,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3386,
+      "measured": 3.7478017807006836,
+      "response": 1.0349841117858887
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0908605928150528,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3387,
+      "measured": 0.24871015548706055,
+      "response": 1.2714262008666992
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0154596275349062,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3388,
+      "measured": 1.1769657135009766,
+      "response": 1.1914344727993011
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.87598509504731,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3389,
+      "measured": 0.9854867458343506,
+      "response": 1.043996125459671
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9693891827028266,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3390,
+      "measured": 1.7231802940368652,
+      "response": 1.1426844596862793
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.8900930360637124,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3391,
+      "measured": 0.0,
+      "response": 1.0578508377075195
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0242295847956022,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3392,
+      "measured": 1.0041193962097168,
+      "response": 1.1996881514787674
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.857315814598391,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3393,
+      "measured": -0.023650705814361572,
+      "response": 1.0233665108680725
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.1757003216375297,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3394,
+      "measured": 1.1859015226364136,
+      "response": 1.3615222871303558
+    },
+    {
+      "dur": 12,
+      "c_abs": 0.9900407638739962,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3395,
+      "measured": 0.37946510314941406,
+      "response": 1.1626205444335938
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.3493318042443543,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3396,
+      "measured": -0.25770795345306396,
+      "response": 1.544714093208313
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.0594461291745567,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3397,
+      "measured": 1.225703239440918,
+      "response": 1.2380599975585938
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.2428235156535818,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3398,
+      "measured": 0.6663179397583008,
+      "response": 1.4310612678527832
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.3410516834680668,
+      "class": "8-15",
+      "shares_per_wake": 40,
+      "seed": 3399,
+      "measured": 0.39905571937561035,
+      "response": 1.535817265510559
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.8010489813173962,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3400,
+      "measured": 1.3852589130401611,
+      "response": 2.0280957221984863
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.343016428974432,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3401,
+      "measured": 3.6263844966888428,
+      "response": 2.6104603111743927
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.8089923087601558,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3402,
+      "measured": 1.418552041053772,
+      "response": 2.037634015083313
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.410848930547369,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3403,
+      "measured": 1.4207649230957031,
+      "response": 2.6828135550022125
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7153033006794083,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3404,
+      "measured": 1.6060659885406494,
+      "response": 1.9363098740577698
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.9405826841134335,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3405,
+      "measured": 2.271275043487549,
+      "response": 2.1779860258102417
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.84812925287092,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3406,
+      "measured": 1.202723741531372,
+      "response": 3.142765998840332
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.5134598785237126,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3407,
+      "measured": 0.6804418563842773,
+      "response": 2.788946211338043
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.985552687497416,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3408,
+      "measured": 0.34954142570495605,
+      "response": 2.228021740913391
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.592727915008536,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3409,
+      "measured": 0.9204868078231812,
+      "response": 2.8760682344436646
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.1214270656265515,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3410,
+      "measured": 1.8248074054718018,
+      "response": 2.3707086741924286
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.4385339035520635,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3411,
+      "measured": 2.032642364501953,
+      "response": 2.7122535705566406
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.027761331321727,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3412,
+      "measured": 4.334545135498047,
+      "response": 2.2722017765045166
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7879641307702494,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3413,
+      "measured": 1.611891269683838,
+      "response": 2.0130324363708496
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.9427870757791383,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3414,
+      "measured": 9.309005737304688,
+      "response": 2.180920124053955
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.2413298776153723,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3415,
+      "measured": 2.0135953426361084,
+      "response": 2.499976873397827
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.984779350553824,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3416,
+      "measured": 3.586167573928833,
+      "response": 2.2271423637866974
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.0485185312532233,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3417,
+      "measured": 1.1023218631744385,
+      "response": 2.2945181131362915
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.022525657306951,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3418,
+      "measured": 1.3880481719970703,
+      "response": 2.2663397789001465
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.914077388471317,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3419,
+      "measured": 4.193640232086182,
+      "response": 2.151260793209076
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.337428769504097,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3420,
+      "measured": 2.6105661392211914,
+      "response": 2.603508710861206
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.3203320559831093,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3421,
+      "measured": 1.3924922943115234,
+      "response": 2.584385871887207
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.01314893188927,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3422,
+      "measured": 2.6821820735931396,
+      "response": 2.256567358970642
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7807546387970885,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3423,
+      "measured": 1.1871922016143799,
+      "response": 2.0069379210472107
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.914694855489514,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3424,
+      "measured": 0.19871897995471954,
+      "response": 2.151953101158142
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.2734945432858464,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3425,
+      "measured": -0.3244752883911133,
+      "response": 2.535354733467102
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.396309699151811,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3426,
+      "measured": 0.7861995697021484,
+      "response": 2.665536880493164
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.317331900087692,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3427,
+      "measured": 4.600345611572266,
+      "response": 2.582087755203247
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.374637225060643,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3428,
+      "measured": 0.38568902015686035,
+      "response": 2.6442894339561462
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7498448867013752,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3429,
+      "measured": 2.755687713623047,
+      "response": 1.974156141281128
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.6705857486607871,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3430,
+      "measured": 0.8474330306053162,
+      "response": 1.8892363607883453
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.95170048076413,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3431,
+      "measured": 0.5843583345413208,
+      "response": 2.190652370452881
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.2455050324791204,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3432,
+      "measured": 3.102804183959961,
+      "response": 2.5064145922660828
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.0422931468648056,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3433,
+      "measured": 0.1006770133972168,
+      "response": 2.2878496050834656
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.048496253552049,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3434,
+      "measured": 1.5639368295669556,
+      "response": 2.2944437861442566
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.849211680133209,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3435,
+      "measured": 2.590391159057617,
+      "response": 3.145879030227661
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.9926054390670203,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3436,
+      "measured": 0.599912166595459,
+      "response": 2.235573798418045
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.9171275849636422,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3437,
+      "measured": 2.436763286590576,
+      "response": 2.1526315212249756
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.3823667202000816,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3438,
+      "measured": 0.2767066955566406,
+      "response": 2.6506590843200684
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7937415700826846,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3439,
+      "measured": 1.6771596670150757,
+      "response": 2.021258533000946
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.9721385328315166,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3440,
+      "measured": 0.20641246438026428,
+      "response": 2.2124889492988586
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7365359901429536,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3441,
+      "measured": 0.16085076332092285,
+      "response": 1.9609176814556122
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.965442950803571,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3442,
+      "measured": 2.782996654510498,
+      "response": 2.2063852548599243
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.16786172394642,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3443,
+      "measured": 1.2819950580596924,
+      "response": 2.4206342697143555
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.14391624454808,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3444,
+      "measured": 0.4898054599761963,
+      "response": 2.3966652154922485
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.987266622070384,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3445,
+      "measured": 1.7527682781219482,
+      "response": 2.228810176253319
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.4077676739573124,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3446,
+      "measured": 0.8724327087402344,
+      "response": 2.677651934325695
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.7421362275601648,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3447,
+      "measured": 0.0,
+      "response": 1.9662556126713753
+    },
+    {
+      "dur": 12,
+      "c_abs": 2.0834875165721454,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3448,
+      "measured": 0.7286806106567383,
+      "response": 2.3315650820732117
+    },
+    {
+      "dur": 12,
+      "c_abs": 1.8608344594346786,
+      "class": "8-15",
+      "shares_per_wake": 80,
+      "seed": 3449,
+      "measured": 1.009580135345459,
+      "response": 2.0941203832626343
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.44743740426771006,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3450,
+      "measured": -0.03164982795715332,
+      "response": 0.3733346126973629
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5710039662250085,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3451,
+      "measured": -0.15496397018432617,
+      "response": 0.45963144302368164
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5602076160061272,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3452,
+      "measured": 0.04042696952819824,
+      "response": 0.45150797069072723
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.39064954965364046,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3453,
+      "measured": -0.14083051681518555,
+      "response": 0.3344106674194336
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.6455412105966236,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3454,
+      "measured": 0.44373416900634766,
+      "response": 0.5134639739990234
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5308527014571193,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3455,
+      "measured": 0.33150607347488403,
+      "response": 0.43175339698791504
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.6026769908452615,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3456,
+      "measured": 1.2295947074890137,
+      "response": 0.48263704776763916
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.59949180957823,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3457,
+      "measured": 2.587139129638672,
+      "response": 0.48042893409729004
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5531708964042541,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3458,
+      "measured": 0.24003171920776367,
+      "response": 0.4471650719642639
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.6074603351648064,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3459,
+      "measured": 0.7126585245132446,
+      "response": 0.48583334498107433
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.6386284145111195,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3460,
+      "measured": 0.15213429927825928,
+      "response": 0.5079644918441772
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5431427291176196,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3461,
+      "measured": 0.7316334247589111,
+      "response": 0.44035911560058594
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5485954219677437,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3462,
+      "measured": -0.20585548877716064,
+      "response": 0.44390642642974854
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5083746203910304,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3463,
+      "measured": 1.9214611053466797,
+      "response": 0.41600222513079643
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.3915117883365498,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3464,
+      "measured": -0.7410730123519897,
+      "response": 0.33585989475250244
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.48266727877320104,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3465,
+      "measured": 2.8056113719940186,
+      "response": 0.39786362648010254
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.46149290636100776,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3466,
+      "measured": 4.782315254211426,
+      "response": 0.38349926471710205
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.49504309796745993,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3467,
+      "measured": -1.4779536724090576,
+      "response": 0.40610432624816895
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.48961289656626233,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3468,
+      "measured": -0.7758842706680298,
+      "response": 0.4029332399368286
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5479841116158637,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3469,
+      "measured": 2.000981330871582,
+      "response": 0.4435023069381714
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.523455879636671,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3470,
+      "measured": 1.384042739868164,
+      "response": 0.42649923264980316
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.6503779961531343,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3471,
+      "measured": -1.1259398460388184,
+      "response": 0.5170712918043137
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5289973815560567,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3472,
+      "measured": -0.7803510427474976,
+      "response": 0.4297969341278076
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.45797456527671454,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3473,
+      "measured": 2.1087446212768555,
+      "response": 0.3801414966583252
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.42595973804325393,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3474,
+      "measured": -0.8148396015167236,
+      "response": 0.3592575788497925
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5394106287005809,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3475,
+      "measured": 1.6328681707382202,
+      "response": 0.4371410608291626
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.48467968530875716,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3476,
+      "measured": 0.0713191032409668,
+      "response": 0.39925622940063477
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.44387220522587456,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3477,
+      "measured": 0.12600469589233398,
+      "response": 0.3701801300048828
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.608930802367641,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3478,
+      "measured": 1.7657151222229004,
+      "response": 0.48658541217446327
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5195271227176981,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3479,
+      "measured": 2.9957900047302246,
+      "response": 0.4229013919830322
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5912700247542897,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3480,
+      "measured": 0.3799084722995758,
+      "response": 0.47451743483543396
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.497722871283369,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3481,
+      "measured": 0.2736339569091797,
+      "response": 0.408632755279541
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.3875468102410695,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3482,
+      "measured": 1.1874630451202393,
+      "response": 0.3325658440589905
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5100410571532747,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3483,
+      "measured": -1.821587085723877,
+      "response": 0.4171525239944458
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5437548213581577,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3484,
+      "measured": -0.4845651388168335,
+      "response": 0.4408189654350281
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5465090203327968,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3485,
+      "measured": 0.3865664005279541,
+      "response": 0.4425020217895508
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5519417924422564,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3486,
+      "measured": 1.1124789714813232,
+      "response": 0.44658172130584717
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.4490143382988964,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3487,
+      "measured": -3.168386220932007,
+      "response": 0.37492233514785767
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.4827966490954009,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3488,
+      "measured": 1.3551483154296875,
+      "response": 0.3982309326529503
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.4792934926062053,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3489,
+      "measured": 3.189225196838379,
+      "response": 0.395816445350647
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.4803771124524147,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3490,
+      "measured": 0.7781476974487305,
+      "response": 0.39655983448028564
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.4612191689525332,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3491,
+      "measured": 0.707551121711731,
+      "response": 0.3827798366546631
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5104594493337685,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3492,
+      "measured": -0.8554484844207764,
+      "response": 0.4174908399581909
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5128478684095307,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3493,
+      "measured": 0.2706155776977539,
+      "response": 0.41912585496902466
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.47962701856423784,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3494,
+      "measured": 0.2647697925567627,
+      "response": 0.3951093442738056
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5369263514355402,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3495,
+      "measured": 0.9370577335357666,
+      "response": 0.43582501262426376
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5362137147441385,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3496,
+      "measured": 0.2608933448791504,
+      "response": 0.43552345037460327
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5263557358728027,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3497,
+      "measured": -2.118898391723633,
+      "response": 0.4286003112792969
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.5465923190501357,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3498,
+      "measured": 0.08173418045043945,
+      "response": 0.44282209873199463
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.4351391796676544,
+      "class": "16-31",
+      "shares_per_wake": 20,
+      "seed": 3499,
+      "measured": -0.42851173877716064,
+      "response": 0.36552000045776367
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9884713411221723,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3500,
+      "measured": -0.44652390480041504,
+      "response": 0.7736388444900513
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.045235149732083,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3501,
+      "measured": 0.0,
+      "response": 0.8193758726119995
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.2268808899079893,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3502,
+      "measured": 0.7045663595199585,
+      "response": 0.9681847095489502
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.8924383228107667,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3503,
+      "measured": 0.19783848524093628,
+      "response": 0.6987802386283875
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9490220667614202,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3504,
+      "measured": 4.001702308654785,
+      "response": 0.7426559925079346
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.0667801046552259,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3505,
+      "measured": 0.42067718505859375,
+      "response": 0.8366941213607788
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1305408930722758,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3506,
+      "measured": 2.70768141746521,
+      "response": 0.8882543444633484
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.0194670221865705,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3507,
+      "measured": 5.891855716705322,
+      "response": 0.7987324595451355
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.7711117068310226,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3508,
+      "measured": 1.6865904331207275,
+      "response": 0.6061934232711792
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9454572471506696,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3509,
+      "measured": 1.814448356628418,
+      "response": 0.7396681904792786
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9061517758596195,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3510,
+      "measured": 0.07654094696044922,
+      "response": 0.7091315537691116
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.8617735902564811,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3511,
+      "measured": 7.427210807800293,
+      "response": 0.6745227202773094
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9423844171621303,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3512,
+      "measured": 0.9687278270721436,
+      "response": 0.7376338243484497
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.748908536886149,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3513,
+      "measured": 2.987973690032959,
+      "response": 0.5890372097492218
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.3350113095335603,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3514,
+      "measured": 0.0,
+      "response": 1.0587995052337646
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9536209140055433,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3515,
+      "measured": 0.8665926456451416,
+      "response": 0.7464830875396729
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9776729421748136,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3516,
+      "measured": -0.9907621145248413,
+      "response": 0.7654992938041687
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1856316159988325,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3517,
+      "measured": -1.0845391750335693,
+      "response": 0.9340028166770935
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1422934063999526,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3518,
+      "measured": -0.08846139907836914,
+      "response": 0.8979575634002686
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1144837453406229,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3519,
+      "measured": 1.501542091369629,
+      "response": 0.8754823207855225
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.2072216672121252,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3520,
+      "measured": 0.03278827667236328,
+      "response": 0.9515954256057739
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.0700330881750169,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3521,
+      "measured": 0.33128833770751953,
+      "response": 0.8393674194812775
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.3870161767583538,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3522,
+      "measured": -0.9719016551971436,
+      "response": 1.104152798652649
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.0854948372769488,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3523,
+      "measured": 0.0,
+      "response": 0.851814866065979
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1296708531066768,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3524,
+      "measured": 1.2623569965362549,
+      "response": 0.8874421268701553
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1368382250635596,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3525,
+      "measured": 1.2559232711791992,
+      "response": 0.8937292695045471
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.049724958958412,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3526,
+      "measured": 1.2162458896636963,
+      "response": 0.822708398103714
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9198699976208806,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3527,
+      "measured": 1.227494478225708,
+      "response": 0.7198842763900757
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.7189798288835467,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3528,
+      "measured": 0.6373710632324219,
+      "response": 0.5674025416374207
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1702640330547447,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3529,
+      "measured": 0.10175919532775879,
+      "response": 0.9213173389434814
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1811738699345282,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3530,
+      "measured": -0.5243721008300781,
+      "response": 0.929327130317688
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1517698990946217,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3531,
+      "measured": 0.8452029228210449,
+      "response": 0.9053754806518555
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.8457407544423242,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3532,
+      "measured": -0.7733006477355957,
+      "response": 0.6625107526779175
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.894406434938525,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3533,
+      "measured": 1.029618740081787,
+      "response": 1.559319257736206
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.8693030029968952,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3534,
+      "measured": 0.495485782623291,
+      "response": 0.6798757314682007
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.968942193873575,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3535,
+      "measured": 3.546567440032959,
+      "response": 0.7581937313079834
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9100036738861905,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3536,
+      "measured": 3.294924020767212,
+      "response": 0.7122657299041748
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9557114896844415,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3537,
+      "measured": 2.0641701221466064,
+      "response": 0.7481175065040588
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.031989994408532,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3538,
+      "measured": -1.1861799955368042,
+      "response": 0.8087207078933716
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9343948215911987,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3539,
+      "measured": 0.8609018325805664,
+      "response": 0.7313990592956543
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1210669545817435,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3540,
+      "measured": 1.6547434329986572,
+      "response": 0.8807047307491302
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.777082224384429,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3541,
+      "measured": 0.4851713180541992,
+      "response": 0.6104570627212524
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.2364841695115598,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3542,
+      "measured": 2.1413636207580566,
+      "response": 0.9764395952224731
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.036856275273085,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3543,
+      "measured": -1.3689098358154297,
+      "response": 0.8126091659069061
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.8749348053238017,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3544,
+      "measured": -0.31896185874938965,
+      "response": 0.684136152267456
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1437467058991893,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3545,
+      "measured": 11.9158296585083,
+      "response": 0.8994492888450623
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9133186260641982,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3546,
+      "measured": 4.015106201171875,
+      "response": 0.7144726514816284
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.9729283556002466,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3547,
+      "measured": -1.825127124786377,
+      "response": 0.7617311477661133
+    },
+    {
+      "dur": 24,
+      "c_abs": 0.937006286646488,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3548,
+      "measured": -3.0706119537353516,
+      "response": 0.7328324317932129
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.1897321698718337,
+      "class": "16-31",
+      "shares_per_wake": 40,
+      "seed": 3549,
+      "measured": 0.6698837280273438,
+      "response": 0.9363038539886475
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.6875841115614227,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3550,
+      "measured": 0.915583610534668,
+      "response": 1.3699959516525269
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.5180697285682476,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3551,
+      "measured": 4.454482555389404,
+      "response": 1.2182540893554688
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.411075288464958,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3552,
+      "measured": 2.5663669109344482,
+      "response": 2.0465039014816284
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.039152256426964,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3553,
+      "measured": -0.17155218124389648,
+      "response": 1.6941416263580322
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.9064988140018688,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3554,
+      "measured": 0.9565505981445312,
+      "response": 1.5707114934921265
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.4517607328361293,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3555,
+      "measured": -0.08047628402709961,
+      "response": 1.1600248962640762
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.8048651575710084,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3556,
+      "measured": 2.7452101707458496,
+      "response": 1.477298617362976
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.5746529769932494,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3557,
+      "measured": -1.6312142610549927,
+      "response": 2.2011845111846924
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.907803402600186,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3558,
+      "measured": 4.406608581542969,
+      "response": 1.5716441571712494
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.370758915702285,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3559,
+      "measured": -1.3160752058029175,
+      "response": 2.0070881843566895
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.9297369030786504,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3560,
+      "measured": 0.52256178855896,
+      "response": 1.5909342765808105
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1219286289044486,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3561,
+      "measured": 0.6101700067520142,
+      "response": 1.7721275091171265
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.8777576727449157,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3562,
+      "measured": 2.0482635498046875,
+      "response": 1.5442291498184204
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1315350818943437,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3563,
+      "measured": -0.35553228855133057,
+      "response": 1.7812303304672241
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.076378524983713,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3564,
+      "measured": 1.0488777160644531,
+      "response": 1.7297817766666412
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.6191853179721125,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3565,
+      "measured": 0.9508516788482666,
+      "response": 2.2441253662109375
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.199536463196147,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3566,
+      "measured": 3.1691079139709473,
+      "response": 1.845721423625946
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.940827768600997,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3567,
+      "measured": 1.2220344543457031,
+      "response": 1.6026209592819214
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1405063871673917,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3568,
+      "measured": 2.3242948055267334,
+      "response": 1.7901778481900692
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.3705291673018642,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3569,
+      "measured": 1.8279929161071777,
+      "response": 2.007916122674942
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.3671657609305017,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3570,
+      "measured": 1.8341435194015503,
+      "response": 2.004992187023163
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1396847970412387,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3571,
+      "measured": 1.5688257217407227,
+      "response": 1.7889569997787476
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.2674256928607974,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3572,
+      "measured": 2.7856245040893555,
+      "response": 1.9102486968040466
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.2686228319202497,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3573,
+      "measured": 1.5729622840881348,
+      "response": 1.910956535488367
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.743375349023886,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3574,
+      "measured": -0.18400299549102783,
+      "response": 1.4210869073867798
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.041927525557296,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3575,
+      "measured": 0.9681036472320557,
+      "response": 1.6973711252212524
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.516490195799226,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3576,
+      "measured": 4.155022621154785,
+      "response": 2.1469172835350037
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1542219347243075,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3577,
+      "measured": -0.4680919647216797,
+      "response": 1.8022472858428955
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.08772480903398,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3578,
+      "measured": 11.593831062316895,
+      "response": 1.7398035526275635
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.4523993810193678,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3579,
+      "measured": 4.542807579040527,
+      "response": 1.1609687805175781
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.167059012204091,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3580,
+      "measured": 1.2035044431686401,
+      "response": 1.8151603937149048
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.0946636791933635,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3581,
+      "measured": 1.4471453428268433,
+      "response": 1.7469142973423004
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.7648516184628642,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3582,
+      "measured": 4.1359405517578125,
+      "response": 1.440378189086914
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.6775409537040717,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3583,
+      "measured": 0.6411073207855225,
+      "response": 2.3006695359945297
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.8267558435980609,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3584,
+      "measured": -2.1094892024993896,
+      "response": 1.4971135258674622
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.109072336239604,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3585,
+      "measured": 1.6040858030319214,
+      "response": 1.7605376839637756
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.753397878372336,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3586,
+      "measured": 0.0,
+      "response": 1.4291359186172485
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.9616721227402028,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3587,
+      "measured": 0.9428129196166992,
+      "response": 1.6223902106285095
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.116664827489685,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3588,
+      "measured": -0.4158085584640503,
+      "response": 1.7676024436950684
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1034737800987084,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3589,
+      "measured": -0.6919546127319336,
+      "response": 1.7551405429840088
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.755006664692439,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3590,
+      "measured": 0.7312755584716797,
+      "response": 1.431459903717041
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.7899500352501567,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3591,
+      "measured": 3.894650936126709,
+      "response": 1.4632883071899414
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.4225800906767114,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3592,
+      "measured": -0.3916473388671875,
+      "response": 2.0573803186416626
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.9188928653408162,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3593,
+      "measured": 4.618314743041992,
+      "response": 1.5821311473846436
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.1609100842168347,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3594,
+      "measured": 1.5596420764923096,
+      "response": 1.8086013793945312
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.962337699361212,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3595,
+      "measured": 5.371586799621582,
+      "response": 1.6222442388534546
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.064349215715715,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3596,
+      "measured": -0.5052917003631592,
+      "response": 1.718034267425537
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.0330760832382038,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3597,
+      "measured": 8.767794609069824,
+      "response": 1.6887761950492859
+    },
+    {
+      "dur": 24,
+      "c_abs": 2.374509064034181,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3598,
+      "measured": 9.354572296142578,
+      "response": 2.01081120967865
+    },
+    {
+      "dur": 24,
+      "c_abs": 1.7775358803982206,
+      "class": "16-31",
+      "shares_per_wake": 80,
+      "seed": 3599,
+      "measured": 6.04238224029541,
+      "response": 1.452354609966278
+    }
+  ],
+  "curve_correlation": 0.6879270992023773,
+  "k_cells": 0.6548813927375459
+}

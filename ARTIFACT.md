@@ -129,6 +129,19 @@ other printed number:
   (`scripts/11_benchmark_prototype.py --venue nasdaq`, 7,162 seed-0 metaorders scored by the
   recurrent and transformer pairs; CIs from `scripts/26`, paired delta from `scripts/30`):
   Table 4's duration-shape and scale-constant cells for Nasdaq.
+- `benchmark_prior_{v10s,v4}.json`, `benchmark_corr_ci_prior_*.json`,
+  `paired_curve_corr_prior.json` — the same 12-cell benchmark on 4,000 episodes of the
+  training prior with the exact shared-noise counterfactual as the measured impact
+  (`scripts/46_duration_benchmark_prior.py`, both pairs on identical episodes): Table 4's
+  synthetic-prior duration-shape and scale-constant cells (one-shot +0.94, recurrent
+  +0.98, recurrent k = 0.73 in native units).
+- `benchmark_abides_duration_{v10s,v4}.json`, `benchmark_corr_ci_abides_duration_*.json`,
+  `paired_curve_corr_abides_duration.json` — the benchmark on 600 fresh ABIDES seed-replay
+  pairs (seeds 3000 to 3599, execution windows of 3 to 24 bars, 20/40/80 shares per wake)
+  with the exact counterfactual as the measured impact
+  (`scripts/47_duration_benchmark_abides.py`): Table 4's ABIDES duration-shape cell
+  (one-shot +0.69, recurrent +0.97, paired difference +0.28 [0.09, 0.46]) and the
+  protocol-dependent ABIDES k = 0.23 quoted in the calibration section.
 - `scale_calibration_cross_eq50.json` — few-shot fit of the per-domain scale
   constant k on a Nasdaq closing-auction tier (five labeled auctions: held-out
   RMSE 0.240 vs last-value 0.280); §4.3. The underlying Nasdaq trades are

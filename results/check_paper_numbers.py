@@ -354,11 +354,27 @@ C("S6.2 Nasdaq benchmark", "recurrent curve correlation +0.95", lambda: J(BN10)[
 ci("S6.2 Nasdaq benchmark", "recurrent curve correlation", lambda: J(BN10)["ci"], 0.90, 0.97)
 C("S6.2 Nasdaq benchmark", "one-shot curve correlation +0.62", lambda: J(BN4)["corr"], 0.62)
 ci("S6.2 Nasdaq benchmark", "one-shot curve correlation", lambda: J(BN4)["ci"], 0.54, 0.69)
-C("S6.2 Nasdaq benchmark", "paired difference +0.33", lambda: J(PN)["recurrent_nasdaq_vs_oneshot_nasdaq"]["delta"], 0.33)
+C("S6.2 Nasdaq benchmark", "paired difference +0.32", lambda: J(PN)["recurrent_nasdaq_vs_oneshot_nasdaq"]["delta"], 0.32)
 ci("S6.2 Nasdaq benchmark", "paired difference", lambda: J(PN)["recurrent_nasdaq_vs_oneshot_nasdaq"]["delta_ci"], 0.27, 0.37)
 C("S6.2 Nasdaq benchmark", "episodes 7,162", lambda: J(BN10)["n_episodes"], 7162, 0)
 C("S6.2 Nasdaq benchmark", "recurrent k = 0.28 (cell estimator)",
   lambda: sum(c["measured"] * c["n"] for c in J("benchmark_nasdaq_v10s.json")["classes"]) / sum(c["response"] * c["n"] for c in J("benchmark_nasdaq_v10s.json")["classes"]), 0.28)
+BP10, BP4, PP = "benchmark_corr_ci_prior_v10s.json", "benchmark_corr_ci_prior_v4.json", "paired_curve_corr_prior.json"
+C("S6.2 prior benchmark", "recurrent curve correlation +0.98", lambda: J(BP10)["corr"], 0.98)
+C("S6.2 prior benchmark", "one-shot curve correlation +0.94", lambda: J(BP4)["corr"], 0.94)
+C("S6.2 prior benchmark", "episodes 4,000", lambda: J(BP10)["n_episodes"], 4000, 0)
+C("S6.2 prior benchmark", "recurrent k = 0.73 in native units (cell estimator)",
+  lambda: sum(c["measured"] * c["n"] for c in J("benchmark_prior_v10s.json")["classes"]) / sum(c["response"] * c["n"] for c in J("benchmark_prior_v10s.json")["classes"]), 0.73)
+BA10, BA4, PA = "benchmark_corr_ci_abides_duration_v10s.json", "benchmark_corr_ci_abides_duration_v4.json", "paired_curve_corr_abides_duration.json"
+C("S6.2 ABIDES duration sweep", "recurrent curve correlation +0.97", lambda: J(BA10)["corr"], 0.97)
+C("S6.2 ABIDES duration sweep", "one-shot curve correlation +0.69", lambda: J(BA4)["corr"], 0.69)
+C("S6.2 ABIDES duration sweep", "paired difference +0.28", lambda: J(PA)["recurrent_abides_duration_vs_oneshot_abides_duration"]["delta"], 0.28)
+ci("S6.2 ABIDES duration sweep", "paired difference", lambda: J(PA)["recurrent_abides_duration_vs_oneshot_abides_duration"]["delta_ci"], 0.09, 0.46)
+C("S6.2 ABIDES duration sweep", "episodes 600", lambda: J(BA10)["n_episodes"], 600, 0)
+C("S6.2 ABIDES duration sweep / S6.3 / Tab.4", "recurrent k = 0.23 (cell estimator)",
+  lambda: sum(c["measured"] * c["n"] for c in J("benchmark_abides_duration_v10s.json")["classes"]) / sum(c["response"] * c["n"] for c in J("benchmark_abides_duration_v10s.json")["classes"]), 0.23)
+C("S6.2 ABIDES duration sweep", "execution windows 3 to 24 bars (min)", lambda: min(e["dur"] for e in J("benchmark_abides_duration_v10s.json")["episodes"]), 3, 0)
+C("S6.2 ABIDES duration sweep", "execution windows 3 to 24 bars (max)", lambda: max(e["dur"] for e in J("benchmark_abides_duration_v10s.json")["episodes"]), 24, 0)
 CN = "calibration_nasdaq.json"
 C("Tab.3 Nasdaq", "causal coverage80 0.47", lambda: J(CN)["tiers"]["Nasdaq bursts"]["causal"]["coverage80"], 0.47)
 C("Tab.3 Nasdaq", "ablated coverage80 0.56", lambda: J(CN)["tiers"]["Nasdaq bursts"]["ablated"]["coverage80"], 0.56)

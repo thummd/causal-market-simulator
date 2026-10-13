@@ -1,0 +1,11 @@
+{
+  "corr": 0.6879270992023773,
+  "ci": [
+    0.43016116038174496,
+    0.8048279325750489
+  ],
+  "n_episodes": 600,
+  "B": 2000,
+  "seed": 0,
+  "source": "output/benchmark_abides_duration_v4.json"
+}

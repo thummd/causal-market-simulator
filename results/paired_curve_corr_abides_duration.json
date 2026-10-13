@@ -1,0 +1,15 @@
+{
+  "recurrent_abides_duration_vs_oneshot_abides_duration": {
+    "r_a": 0.9713264847957541,
+    "r_b": 0.6879270992023773,
+    "delta": 0.28339938559337685,
+    "delta_ci": [
+      0.08863355088374399,
+      0.4622929170827892
+    ],
+    "n_episodes": 600,
+    "B": 2000,
+    "file_a": "output/benchmark_abides_duration_v10s.json",
+    "file_b": "output/benchmark_abides_duration_v4.json"
+  }
+}
