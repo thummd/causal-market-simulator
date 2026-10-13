@@ -7,5 +7,5 @@
   "n_episodes": 7162,
   "B": 2000,
   "seed": 0,
-  "source": "/home/dennis/repos/causal-market-simulator/output/benchmark_nasdaq_v10s.json"
+  "source": "output/benchmark_nasdaq_v10s.json"
 }
